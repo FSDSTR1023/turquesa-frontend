@@ -5,6 +5,32 @@
   text-align: center;
 }
 
+
+/* Style for the navigation bar */
+nav {
+  background-color: #333; /* Dark background for the nav bar */
+  overflow: hidden; /* Ensures the content is contained within the navbar */
+  display: flex; /* Aligns the links horizontally */
+  justify-content: space-around; /* Spaces out the links evenly */
+  padding: 14px 16px; /* Adds some padding inside the navbar */
+}
+
+/* Style for the links inside the nav bar */
+nav a {
+  color: white; /* Sets the text color to white */
+  text-align: center; /* Centers the text */
+  padding: 14px 16px; /* Adds padding to the links */
+  text-decoration: none; /* Removes underline from the links */
+  font-size: 17px; /* Increases font size */
+}
+
+/* Changes the color of the links on hover */
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
