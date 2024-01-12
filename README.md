@@ -20,9 +20,9 @@ Para el desrarollo he
 
 # Sprint 1
 Definir entidades Mongoose
-● Montar Express en repositorio
-● Crear BBDD MongoDB Atlas
-● Conectar Express con MongoDB Atlas
-● Montar Vite en repositorio
-● Montar un CRUD de una entidad
-● Login y mantenimiento de sesión (PENDIENTE DE CLASE)
+- Montar Express en repositorio
+- Crear BBDD MongoDB Atlas
+- Conectar Express con MongoDB Atlas
+- Montar Vite en repositorio
+- Montar un CRUD de una entidad
+- Login y mantenimiento de sesión (PENDIENTE DE CLASE)
