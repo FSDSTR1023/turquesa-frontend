@@ -5,10 +5,11 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(null);
+  const [conectado, setConectado] = useState(false);
 
   return (
     <Router>
-      <Navbar />
+      <Navbar conectado={conectado}/>
       <Routes>
         <Route  /> 
       </Routes>  
