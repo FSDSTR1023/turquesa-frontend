@@ -6,3 +6,13 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+# Front-end for Invito
+Hemos usado las siguientes herramientas
+- https://app.visily.ai/
+
+Para el desrarollo he
+- instalado dependencias `yarn install`
+- ejecutado servidor local `yarn dev`
+- instalado React Router : `yarn add react-router-dom`
