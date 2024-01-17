@@ -6,14 +6,16 @@ const Navbar = (conectado) => {
 
     return (
         <nav>
-            <div>
+            <div className="rectangulo"></div>
+            <div className="navMenu">
+            <div className="navLogo">
                 <ul>
                     <li>
                         <Link to='/'><img /></Link>
                     </li>
                 </ul>
             </div>
-            <div>
+            <div className="navInicio">
                 <ul>
                     {conectado ? (
                         <>
@@ -21,7 +23,7 @@ const Navbar = (conectado) => {
                                 <Link to='/'>Mis tarjetas</Link>
                             </li>
                             <li>
-                                <p>Usuario</p>
+                                Usuario     
                             </li>
                             <li>
                                 <Link to='/' onClick={logOut}>Logout</Link>
@@ -35,9 +37,11 @@ const Navbar = (conectado) => {
                             <li>
                                 <Link to='/'>Log in</Link>
                             </li>
+                            <li className="line"></li>
                         </>
                     )}
                 </ul>
+            </div>
             </div>
         </nav>
     );

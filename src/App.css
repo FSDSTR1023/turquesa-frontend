@@ -1,69 +1,108 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/*PALETA DE COLORES: MORADO: rgba(82,65,209,1) TEXTO: rgba(50,56,66,1) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body{
+  margin: 0px;
+ 
+
+}
+/* menu navegador------------------------------------------------------------------------- */
+.rectangulo{
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  width: 100%; 
+  height: 11px; 
+  background: rgba(82,65,209,1); 
+  border-radius: 0px; 
+
+  
+}
+.navMenu{
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  height: 40px;
+  box-sizing: border-box;
+  margin-top: 39px;
+  
+  
+}
+.navInicio{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 50%;
+  align-items: baseline;
+ 
+
+}
+nav a{
+  text-decoration: none;
+  color:inherit;
+}
+nav ul{
+  list-style-type: none;
+  display:flex;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  box-sizing: content-box;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+}
+nav li{
+  display:inline-block;
+  justify-content: flex-end;
+  margin: 7px;
+  text-decoration: none;
+  align-items: baseline;
   text-align: center;
+  color:  rgba(50,56,66,1);
+  font-size: 14px;
+  padding:  12px; 
+  position: relative;
+  /*text-transform: uppercase;*/
+  font-family: "Montserrat", sans-serif;
+ 
+ 
+}
+nav li:hover{
+  color:rgba(82,65,209,1);
+  border-bottom: 2px;
+  border-bottom-color:  rgba(82,65,209,1);
+  transition: all .4s ease;
+  
+}             /* efecto linea  */
+nav li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(82, 65, 209, 1);
+  transition: width 0.4s ease;
+}
+/*nav li:hover::after {
+  width: 100%;
+}*/
+                  /* para que se quede marcado al hacer clic, mejor cambiar con js ** solo funciona con link        */ 
+nav li:hover::after,
+nav li:active::after,
+nav li:focus::after {
+  width: 100%;
+ 
 }
 
-/* App.css */
-
-/* Style for the navigation bar */
-nav {
-  background-color: #333; /* Dark background for the nav bar */
-  overflow: hidden; /* Ensures the content is contained within the navbar */
-  display: flex; /* Aligns the links horizontally */
-  justify-content: space-around; /* Spaces out the links evenly */
-  padding: 14px 16px; /* Adds some padding inside the navbar */
+nav a:active,
+nav a:focus {                 
+  background-color: rgba(82, 65, 209, 0.2);
+  padding: 12px; 
+  transition: all 0.4s ease;
+  
 }
-
-/* Style for the links inside the nav bar */
-nav a {
-  color: white; /* Sets the text color to white */
-  text-align: center; /* Centers the text */
-  padding: 14px 16px; /* Adds padding to the links */
-  text-decoration: none; /* Removes underline from the links */
-  font-size: 17px; /* Increases font size */
-}
-
-/* Changes the color of the links on hover */
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/*---------------------------------------------------------------------------------------------*/
