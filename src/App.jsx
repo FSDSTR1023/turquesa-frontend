@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from "./components/Navbar";
-import './App.css'
+import './App.css';
+import PaginaPrincipal from './pages/PaginaPrincipal';
 import MuestraTarjeta from './components/MuestraTarjeta';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       {/* <MuestraTarjeta /> */}
       <Navbar conectado={conectado}/>
       <Routes>
-        <Route  /> 
+        <Route path="/" element={<PaginaPrincipal />} /> 
       </Routes>  
     </Router>
   )
