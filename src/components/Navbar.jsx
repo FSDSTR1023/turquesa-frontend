@@ -9,11 +9,7 @@ const Navbar = (conectado) => {
             <div className="rectangulo"></div>
             <div className="navMenu">
             <div className="navLogo">
-                <ul>
-                    <li>
-                        <Link to='/'><img /></Link>
-                    </li>
-                </ul>
+                <Link to='/'></Link>
             </div>
             <div className="navInicio">
                 <ul>
