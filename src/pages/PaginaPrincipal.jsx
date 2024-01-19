@@ -25,21 +25,22 @@ const PaginaPrincipal = () => {
                             </div>
                         </div>
                         <div className='imagenMuestra'></div>
-                 
                     </div>
 
+
                 </div>
-            
             </section>
             <section> {/*Características de las tarjetas*/}
-            <div className='screenDos'>
+                <div className='screenDos'>
+                    {/* lo que incluyen las invitaciones */}
+
                     <div className='tituloScreenDos'>¿Qué incluyen nuestras invitaciones?</div>
 
 
                 </div>
-
             </section>
             <section> {/*Lista de tarjetas*/}
+                <h1>Ver modelos</h1>
                 {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                    { <MuestraTarjeta /> }
             </section>
