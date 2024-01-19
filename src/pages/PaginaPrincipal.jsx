@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
+import '../styles/PaginaPrincipal.css';
 
 const PaginaPrincipal = () => {
     var [tarjetas, setTarjetas] = useState([]);
@@ -26,21 +27,16 @@ const PaginaPrincipal = () => {
                         <div className='imagenMuestra'></div>
                  
                     </div>
-        
-            
 
                 </div>
-             <section>
-                <div className='screenDos'>
-                    {/* lo que incluyen las invitaciones */}
+            
+            </section>
+            <section> {/*Características de las tarjetas*/}
+            <div className='screenDos'>
                     <div className='tituloScreenDos'>¿Qué incluyen nuestras invitaciones?</div>
 
 
                 </div>
-             </section>
-
-            </section>
-            <section> {/*Características de las tarjetas*/}
 
             </section>
             <section> {/*Lista de tarjetas*/}
