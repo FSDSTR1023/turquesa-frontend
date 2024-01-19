@@ -7,10 +7,11 @@ import PaginaPrincipal from './pages/PaginaPrincipal';
 function App() {
   const [user, setUser] = useState(null);
   const [conectado, setConectado] = useState(false);
-
+   {/* <MuestraTarjeta /> */}
   return (
     <Router>
-      <Navbar conectado={conectado}/>
+    {/*<Navbar conectado={conectado}/>*/}
+        
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} /> 
       </Routes>  
