@@ -24,24 +24,16 @@ const PaginaPrincipal = () => {
                             </div>
                         </div>
                         <div className='imagenMuestra'></div>
-                 
                     </div>
-        
-            
-
                 </div>
-             <section>
+            </section>
+            <section> {/*Características de las tarjetas*/}
                 <div className='screenDos'>
                     {/* lo que incluyen las invitaciones */}
                     <div className='tituloScreenDos'>¿Qué incluyen nuestras invitaciones?</div>
 
 
                 </div>
-             </section>
-
-            </section>
-            <section> {/*Características de las tarjetas*/}
-
             </section>
             <section> {/*Lista de tarjetas*/}
                 <h1>Ver modelos</h1>
