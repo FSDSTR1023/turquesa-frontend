@@ -14,6 +14,7 @@ const PaginaPrincipal = () => {
 
             </section>
             <section> {/*Lista de tarjetas*/}
+                <h1>Ver modelos</h1>
                 {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
             </section>
         </div>
