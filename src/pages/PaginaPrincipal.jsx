@@ -39,10 +39,13 @@ const PaginaPrincipal = () => {
 
                 </div>
             </section>
-            <section> {/*Lista de tarjetas*/}
+            <section className='screenTres'> {/*Lista de tarjetas*/}
                 <h1>Ver modelos</h1>
-                {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
-                   { <MuestraTarjeta /> }
+                <div className='tarjetasDeMuestra'>
+                    {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                    { <MuestraTarjeta /> }
+                    { <MuestraTarjeta /> }
+                </div>
             </section>
         </div>
     );

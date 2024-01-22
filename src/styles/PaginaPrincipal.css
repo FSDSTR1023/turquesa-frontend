@@ -261,3 +261,21 @@ margin-left: -100px;
   line-height: 68px; 
   color: rgba(255,255,255,1); 
 }
+
+
+/*---------------------------------------------------------------------------------------------*/
+
+/*screen3*/
+.screenTres {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.tarjetasDeMuestra {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center; 
+  gap: 15px;
+}
