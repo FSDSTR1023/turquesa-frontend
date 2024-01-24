@@ -13,7 +13,7 @@ const PaginaPrincipal = () => {
             <section>
                 <div className='screenUno'>
                     {/*componente Navbar*/}
-                    <Navbar></Navbar>
+                    <Navbar />
                     <div className='encabezado'>
                         <div className='izquierda'>
                             <div className='textoBienvenida'>Tu <br/>invitación<br/> web</div>
