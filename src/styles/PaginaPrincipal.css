@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@300&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300&display= intercambiar');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
 *{
   margin:0; 
   padding:0;
@@ -161,33 +164,50 @@ nav a:focus {
   font-weight: 400; 
   line-height: 240px; 
   color: rgba(255,255,255,1);
-  text-shadow: rgba(82, 65, 209, 0.2) 0.1em 0.1em 0.2em;
-  text-align: end;
+  text-shadow: rgba(82, 65, 209, 0.2) 0.3em 0.2em 0em;
+  text-align: center;
   line-height: 1;
   
 
 
 }
 .imagenMuestra{
-
+position: relative;
 background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/ejemplo%20de%20invitacion.jpg?raw=true);
 background-size: cover;
-background-attachment: fixed;
 background-position: center center; 
 background-repeat: no-repeat;
 height: 300vh;
 /*top: 172px; 
 left: 729px;*/
-width: 858px; 
+width: 100%; 
 height: 544px; 
 border-radius: 8px; 
 box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12);
+opacity: 1; /* Inicialmente oculta */
+transition: transform 8s ease;
+overflow: hidden;
 
 
 }
+.imagenMuestra::before{
+    content: ""; /* Necesario para que el pseudo-elemento exista y tenga altura */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2500px;
+    background-image: inherit;
+    background-size: inherit;
+    transition: transform 9s ease;
+}
+.imagenMuestra:hover::before {
+    transform: translateY(-78%);
+}
+
 .rectanguloTexto{
   display: flex;
-margin-left: -100px;
+  margin-left: -100px;
   top: 706px; 
   left: 63px; 
   width: 610px; 
@@ -199,8 +219,19 @@ margin-left: -100px;
   box-shadow: 0px 8px 17px rgba(23, 26, 31, 0.15), 0px 0px 2px rgba(23, 26, 31, 0.12); 
   text-align: center;
   align-items: center;
+  font-family: Advent Pro; 
+  font-size: 20px; 
+  font-weight: 400; 
+  line-height: 30px; 
+  color: rgba(23,26,31,1);
+
   
 }
+.rectanguloTexto p {
+  padding-left: 90px;
+  
+}
+
 .colocarBotones{
   display: flex;
   flex-direction: row;
@@ -243,21 +274,42 @@ margin-left: -100px;
 .screenDos{
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0px;
+  margin: 0px;
   background-color: rgb(82, 65, 209);
   background-size: cover;
   background-position: center center; 
   background-repeat: no-repeat;
+
   
 }
 .tituloScreenDos{
   margin-top: 5%;
-  width: 640px; 
-  height: 88px; 
+  height: min-content;
   font-family: Advent Pro; 
   font-size: 48px; 
-  font-weight: 400; 
-  line-height: 68px; 
   color: rgba(255,255,255,1); 
+}
+.slider{
+  display: flex;
+  top: 356px; 
+  left: 310px; 
+  width: 1299px; 
+  height: 368px; 
+  background: rgba(255,255,255,1); /* white */
+  border-radius: 25px; 
+  box-shadow: 0px 4px 9px rgba(23, 26, 31, 0.11), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-m */
+  align-items: center;
+  padding-left: 20px;
+  
+
+}
+
+
+/*---------------------------------------------------------------------------------*/
+.buttonTarjetaOro{
+  width: 50px;
+  height: 20px;
+  background-color: blue;
 }

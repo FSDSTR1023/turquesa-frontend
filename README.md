@@ -17,6 +17,8 @@ Para el desrarollo he
 - ejecutado servidor local `yarn dev`
 - instalado React Router : `yarn add react-router-dom`
 
+- Para poder incorporar un slider al proyecto (screen 2) he implementado la librería:  `npm install swiper`
+
 
 # Sprint 1
 Definir entidades Mongoose
