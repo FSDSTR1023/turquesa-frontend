@@ -291,6 +291,7 @@ overflow: hidden;
   font-size: 48px; 
   color: rgba(255,255,255,1); 
 }
+
 .slider{
   display: flex;
   top: 356px; 
@@ -312,4 +313,20 @@ overflow: hidden;
   width: 50px;
   height: 20px;
   background-color: blue;
+}
+
+/*screen3*/
+.screenTres {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.tarjetasDeMuestra {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center; 
+  gap: 15px;
+
 }
