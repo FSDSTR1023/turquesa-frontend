@@ -2,11 +2,15 @@
 import { useState, useEffect } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
+import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
 import { getTarjetas } from '../api/tarjeta.api.js';
+import TarjetaOro from '../components/TarjetaOro.jsx';
+
 
 const PaginaPrincipal = () => {
     var [tarjetas, setTarjetas] = useState([]);
+    
 
     useEffect(() => {
         console.log("Aqui entra")
@@ -32,7 +36,7 @@ const PaginaPrincipal = () => {
                     <div className='encabezado'>
                         <div className='izquierda'>
                             <div className='textoBienvenida'>Tu <br/>invitación<br/> web</div>
-                            <div className='rectanguloTexto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore facere earum praesentium veritatis deleniti quidem atque temporibus aut, quaerat impedit eos eum repudiandae vero optio delectus? Rerum expedita omnis nisi!</div>
+                            <div className='rectanguloTexto'><p>Interactivas, funcionales y originales<br />Invitaciones digitales para vuestra boda <br />¡Obtén tu invitación hoy!</p></div>
                             <div className='colocarBotones'>
                                 <button className='buttomMorado'>Comprar</button>
                                 <button className='buttomMorado'>Ver Modelos</button> {/*insertar links */}
@@ -47,9 +51,8 @@ const PaginaPrincipal = () => {
             </section>
             <section> {/*Características de las tarjetas*/}
                 <div className='screenDos'>
-                    {/* lo que incluyen las invitaciones */}
-
-                    <div className='tituloScreenDos'>¿Qué incluyen nuestras invitaciones?</div>
+                   <div className='tituloScreenDos'>¿Qué incluyen nuestras invitaciones?</div>
+                   <ContenidoScreenDos />
 
 
                 </div>
@@ -59,6 +62,10 @@ const PaginaPrincipal = () => {
                 <div className='tarjetasDeMuestra'>
                     {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
+                <div className='buttonTarjetaOro'>
+                 <TarjetaOro/>
+                 </div>
+
             </section>
         </div>
     );
