@@ -1,0 +1,9 @@
+.gestion-invitados-container {
+    /* Example styles */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f5f5;
+    /* More styles that affect the layout, appearance, and behavior of the container */
+  }
+  
