@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import CampoAEditar from "../components/CampoAEditar.jsx";
 
-const EditarTarjeta = (tarjeta) => {
-    const campos = tarjeta.datos_personalizados;
+const EditarTarjeta = (props) => {
+    const campos = props.tarjeta.datos_personalizados;
     
     return (
         <div>

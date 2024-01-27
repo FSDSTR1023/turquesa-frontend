@@ -1,25 +1,35 @@
 import { cleanup, render, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { MuestraTarjeta } from "./MuestraTarjeta";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import MuestraTarjeta from "./MuestraTarjeta";
 
 describe("MuestraTarjeta", () => {
-  const onClickFunction = vi.fn();
   beforeEach(() => {
     render(
-      <MuestraTarjeta />
+      <MuestraTarjeta tarjeta={{nombre:"algo"}} />
     );
   });
   afterEach(() => {
     cleanup();
   });
 
-  it("Renderiza la tarjeta", () => {
-    expect(screen.getByClass("muestraTarjetaContenedor").toBeDefined());
+  // it("Renderiza la tarjeta", () => {
+  //   screen.debug();
+  //   expect(screen.getByTestId("muestraTarjetaTesting"));
+  // });
+
+  it("Renderiza el botón", () => {
+    expect(screen.getByText("Ver tarjeta"));
   });
 
-//   it("renders the text of the button", () => {
-//     expect(screen.getByRole("button")).toHaveTextContent("Text of the button");
-//   });
+  it("Renderiza la imagen", () => {
+    expect(screen.getByAltText("Imagen tarjeta"));
+  });
+
+  it("Renderiza los datos de la tarjeta que se le pasa", () => {
+    expect(screen.getByText("algo"));
+  });
+
+
 //   //this test is using React testing library with vitest
 //   it("executes the onClick function when clicked", () => {
 //     screen.getByRole("button").click();

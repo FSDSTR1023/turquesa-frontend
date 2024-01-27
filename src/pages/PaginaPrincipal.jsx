@@ -1,12 +1,27 @@
 /* eslint-disable react/jsx-key */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
 import '../styles/PaginaPrincipal.css';
+import { getTarjetas } from '../api/tarjeta.api.js';
 
 const PaginaPrincipal = () => {
     var [tarjetas, setTarjetas] = useState([]);
 
+    useEffect(() => {
+        console.log("Aqui entra")
+        async function getTasksResponse() {
+          try {
+            console.log("Aqui entra - 2")
+            const response = await getTarjetas();
+            setTarjetas(response.data);
+            console.log('Tarjetas: ', tarjetas);
+          } catch (error) {
+            console.log(error);
+          }
+        }
+        getTasksResponse();
+      }, []);
 
     return (
         <div>
@@ -43,8 +58,6 @@ const PaginaPrincipal = () => {
                 <h1>Ver modelos</h1>
                 <div className='tarjetasDeMuestra'>
                     {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
-                    { <MuestraTarjeta /> }
-                    { <MuestraTarjeta /> }
                 </div>
             </section>
         </div>
