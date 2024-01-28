@@ -62,9 +62,9 @@ const PaginaPrincipal = () => {
                 <div className='tarjetasDeMuestra'>
                     {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
-                <div className='buttonTarjetaOro'>
+                {/* <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
-                 </div>
+                 </div> */}
 
             </section>
         </div>

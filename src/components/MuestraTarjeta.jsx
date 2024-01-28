@@ -10,7 +10,7 @@ const MuestraTarjeta = (props) => {
             <img src={tarjeta.imagen_principal} alt="Imagen tarjeta" />
             <p className="muestraTarjetaNombre">{tarjeta.nombre}</p>
             <div className="muestraTarjetaOverlay"></div>
-            <div className="muestraTarjetaBotonVerTarjeta"><a href="#"> Ver tarjeta </a></div>
+            <div className="muestraTarjetaBotonVerTarjeta"><a> <Link to={'/ejemplo/'+tarjeta._id}>Ver tarjeta</Link> </a></div>
         </div>
     );
 }

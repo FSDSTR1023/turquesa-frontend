@@ -4,18 +4,20 @@ import Navbar from "./components/Navbar";
 
 import PaginaPrincipal from './pages/PaginaPrincipal';
 import EditarTarjeta from './pages/EditarTarjeta';
+import TarjetaDeEjemplo from './pages/TarjetaDeEjemplo';
 
 function App() {
   const [user, setUser] = useState(null);
   const [conectado, setConectado] = useState(false);
-   {/* <MuestraTarjeta /> */}
+
   return (
     <Router>
     {/*<Navbar conectado={conectado}/>*/}
         
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} /> 
-        <Route path="/:id/edit" element={<EditarTarjeta />} /> 
+        <Route path="/ejemplo/:id" element={<TarjetaDeEjemplo />} /> 
+        <Route path="/adquirida/:id/edit" element={<EditarTarjeta />} /> 
       </Routes>  
     </Router>
   )
