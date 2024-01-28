@@ -22,6 +22,9 @@ const Navbar = (conectado) => {
                                 Usuario     
                             </li>
                             <li>
+                                    <Link to='/gestion-invitados'>Gestión de Invitados</Link> {/* Nuevo enlace */}
+                            </li>
+                            <li>
                                 <Link to='/' onClick={logOut}>Logout</Link>
                             </li>
                         </>
