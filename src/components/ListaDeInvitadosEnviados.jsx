@@ -1,6 +1,6 @@
 // src/components/ListaDeInvitadosEnviados.jsx
-
 import React from 'react';
+import '../styles/ListaDeInvitadosEnviados.css'; 
 
 function ListaDeInvitadosEnviados({ sentInvites, onUpdateStatus }) {
   return (
