@@ -1,16 +1,19 @@
-// src/components/FormularioAñadirInvitado.jsx
+// src/components/FormularioAniadirInvitado.jsx
 
 import React, { useState } from 'react';
+import '../styles/FormularioAniadirInvitado.css'; // Import your specific CSS file
 
-function FormularioAñadirInvitado({ onAddGuest }) {
+function FormularioAniadirInvitado({ onAddGuest }) {
   const [guestName, setGuestName] = useState('');
+  const [guestSurName, setGuestSurName] = useState('');
   const [guestEmail, setGuestEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (guestName && guestEmail) {
-      onAddGuest({ name: guestName, email: guestEmail });
+    if (guestName && guestEmail && guestSurName) {
+      onAddGuest({ name: guestName, surname: guestSurName, email: guestEmail });
       setGuestName('');
+      setGuestSurName('');
       setGuestEmail('');
     }
   };
@@ -25,6 +28,12 @@ function FormularioAñadirInvitado({ onAddGuest }) {
           onChange={(e) => setGuestName(e.target.value)}
         />
         <input
+          type="text"
+          placeholder="Apellidos"
+          value={guestSurName}
+          onChange={(e) => setGuestSurName(e.target.value)}
+        />
+        <input
           type="email"
           placeholder="Email"
           value={guestEmail}
@@ -36,4 +45,4 @@ function FormularioAñadirInvitado({ onAddGuest }) {
   );
 }
 
-export default FormularioAñadirInvitado;
+export default FormularioAniadirInvitado;
