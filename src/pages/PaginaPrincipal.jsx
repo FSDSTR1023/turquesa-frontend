@@ -36,7 +36,7 @@ const PaginaPrincipal = () => {
                     <div className='encabezado'>
                         <div className='izquierda'>
                             <div className='textoBienvenida'>Tu <br/>invitación<br/> web</div>
-                            <div className='rectanguloTexto'><p>Interactivas, funcionales y originales<br />Invitaciones digitales para vuestra boda <br />¡Obtén tu invitación hoy!</p></div>
+                            <div className='rectanguloTexto1'><p>Interactivas, funcionales y originales<br />Invitaciones digitales para vuestra boda <br />¡Obtén tu invitación hoy!</p></div>
                             <div className='colocarBotones'>
                                 <button className='buttomMorado'>Comprar</button>
                                 <button className='buttomMorado'>Ver Modelos</button> {/*insertar links */}
