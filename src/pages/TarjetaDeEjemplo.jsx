@@ -1,9 +1,34 @@
-
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import fetchHtml from '../api/funcionHtml';
 
 const TarjetaDeEjemplo = () => {
+    const [htmlContent, setHtmlContent] = useState('');
+
+    const tarjeta = null;
+
+    const manejarCompra = ()=> {
+        
+    }
+
+    useEffect(() => {
+        const fetchHtml = async () => {
+            try {
+                const response = await fetch('/tarjetaOro.html');
+                const html = await response.text();
+                setHtmlContent(html);
+            } catch (error) {
+                console.error('Error fetching HTML:', error);
+            }
+        };
+
+        fetchHtml();
+    }, []);
+
     return (
         <div>
-            Se ve la ventana
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <button onClick={()=>manejarCompra()}>Comprar</button>
         </div>
     );
 }
