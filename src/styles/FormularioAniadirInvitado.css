@@ -1,0 +1,66 @@
+/* FormularioAniadirInvitado.css */
+
+/* Main container for the form */
+.formulario-aniadir-invitado {
+    width: 818px;
+    margin: auto; /* Center the container in its parent */
+    background: #FFFFFF; /* White background */
+    border-radius: 3px;
+    border: 1px solid #F3F4F6; /* Light grey border */
+    box-shadow: 0px 8px 17px rgba(23, 26, 31, 0.2), 0px 0px 2px rgba(23, 26, 31, 0.12); /* Soft shadow for depth */
+    padding: 20px; /* Inner spacing */
+    margin-top: 20px; /* Spacing from the top */
+    /* Adjust positioning as needed based on the layout */
+  }
+  
+  /* If you have labels in your form */
+  .formulario-aniadir-invitado label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(50,56,66,1); /* Text color */
+    font-size: 16px; /* Readable font size */
+    font-family: 'Montserrat', sans-serif; /* Consistent font-family */
+  }
+  
+  /* Style for input fields */
+  .formulario-aniadir-invitado input,
+  .formulario-aniadir-invitado select,
+  .formulario-aniadir-invitado textarea {
+    width: 100%; /* Full-width inputs */
+    padding: 10px; /* Padding for input fields */
+    margin-bottom: 15px; /* Spacing between inputs */
+    border: 1px solid #ccc; /* Border for the inputs */
+    border-radius: 3px; /* Slight rounding of corners for the inputs */
+    box-sizing: border-box; /* Border box for proper width calculation */
+  }
+  
+  /* Style for buttons */
+  .formulario-aniadir-invitado button {
+    background-color: rgba(82,65,209,1); /* Use primary color for buttons */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px; /* Consistent border radius */
+    cursor: pointer; /* Cursor to indicate button */
+    font-family: 'Montserrat', sans-serif; /* Consistent font-family */
+    font-weight: 600; /* Bold font for buttons */
+    margin-top: 10px; /* Spacing above the button */
+    width: auto; /* Auto-width based on content */
+    box-shadow: 0px 4px 9px rgba(23, 26, 31, 0.11); /* Shadow for button for depth */
+  }
+  
+  /* Button hover effect */
+  .formulario-aniadir-invitado button:hover {
+    background-color: rgba(62,45,160,1); /* Slightly darker on hover */
+    box-shadow: 0px 6px 12px rgba(23, 26, 31, 0.15); /* Larger shadow on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .formulario-aniadir-invitado {
+      width: 95%; /* Full width on small screens */
+      margin-top: 10px; /* Less spacing on top */
+      padding: 10px; /* Less padding */
+    }
+  }
+  
