@@ -1,4 +1,608 @@
 
-p {
-    color:blueviolet ;
+*{
+    margin: 0px;
 }
+.TOSeccionPortada{
+    width: 100%;
+    height: 110vh;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    filter: brightness(120%);
+    background-attachment: fixed;
+
+    
+}
+.ColorTransparente{
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+ 
+    background-color:rgba(26, 25, 25, 0.61);
+    z-index: 2;
+
+    
+}
+.TOTextoIntroduccion h2, h1, p{
+    color: white;
+    
+}
+.fechaEnlace{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+}
+.Pareja{
+    font-family: "DM Serif Display", serif;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 102px;
+
+}
+.FraseBienvenida{
+    font-family: Quicksand, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 20px;
+
+}
+.TOSeccionDos{
+    width: 100%;
+    background-color: #DAE8DE;
+   
+    padding-bottom: 10px;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+  
+}
+.cuentaRegresivaEnlace{
+    margin-top: -90px;
+    display: flex;
+    align-items: center;
+    width: 420px;
+    height: 420px;
+    align-items: center;
+    justify-content:  center;
+    background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/circuloOro.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    z-index: 1;
+   
+}
+
+.circuloRegresiva{
+    width: 290px;
+    height: 290px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.40);
+    text-align: center;
+
+  
+}
+.circuloRegresiva p{
+    color: #C0A880;
+    font-size: 40px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+.box-CuentaRegresiva{
+    text-align: center;
+    color: #575756;
+    font-family:  "DM Serif Display", serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 102px;
+
+
+}
+.contenido-evento{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+  
+
+}
+.contenido-evento h2{
+    text-align: center;
+    color: #575756;
+    font-family:  "DM Serif Display", serif;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 102px;
+
+
+}
+.contenido-evento h3{
+    text-align: center;
+    color: #575756;
+    font-family:  "DM Serif Display", serif;
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 102px;
+
+
+}
+
+.contenido-evento p{
+    text-align: center;
+    color: #575756;
+    font-family:  Quicksand, sans-serif;
+    font-size: 18px;
+    font-weight: 400px;
+    line-height: 27px;
+    
+}
+.ceremonia{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+
+}
+
+.celebracion{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+ 
+    
+   
+   
+
+}
+.linea {
+    width: 100%;
+    border-top: 2px solid #C0A880; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+  }
+.TOButton{
+    width:auto;
+    text-align: center;
+   justify-content: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.40);
+    transition: all 0.5s ;
+    padding: 8px 25px;
+    color: #C0A880;
+    border:none;
+ 
+  
+
+}
+
+.TOButton:hover{
+    background-color: #C0A880;
+    color: white;
+}
+
+.TOSeccionTres{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/fondoPapel.jpg?raw=true);
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+}
+.TOSeccionTres h1{
+    color: #333333;
+    font-family: "DM Serif Display", serif;
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 54px;
+    text-align: center;
+
+}
+.TOSeccionTres p{
+    font-family: sans-serif;
+    text-align: center;
+    font-family: Quicksand, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #bfa880;
+    
+   
+}
+.intro-fotografias{
+    margin-top: 150px;
+}
+
+
+
+.TOSeccionTres .swiper{
+    width: 90%;
+    height: 800px;
+    cursor: pointer;
+    margin-top: 80px;
+    padding-bottom: 100px;
+   
+   
+    
+   
+  
+   
+}
+
+.TOSeccionTres .swiper-slide {
+
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding-top: 20px;
+    padding-bottom: 80px;
+    padding-left: 10px;
+    padding-right: 10px;*/ 
+   
+  
+  }
+   
+  
+  .TOSeccionTres .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow:0px 0px 30px #575756;
+ 
+
+  }
+  .TOSeccionCuatro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #DAE8DE;
+    align-items: center;
+    padding-top: 20px;
+  
+  }
+
+ .TOSeccionCuatro h1, h2{
+    color: #333333;
+    font-family: "DM Serif Display", serif;
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 54px;
+    text-align: center;
+    
+ }
+ .TOSeccionCuatro h2{
+    font-weight: 200;
+    font-size: 30px;
+
+
+ }
+ .TOSeccionCuatro p{
+   
+    font-family: sans-serif;
+    text-align: center;
+    font-family: Quicksand, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #bfa880;
+    
+   
+}
+/*-------------------------------------------------------------------------------------*/
+.shake-top {
+	-webkit-animation: shake-top 0.8s ease-in-out 1s infinite both;
+	        animation: shake-top 0.8s ease-in-out 1s infinite both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2024-1-31 15:16:39
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shake-top
+ * ----------------------------------------
+ */
+/* ----------------------------------------------
+ * Generated by Animista on 2024-1-31 15:21:13
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shake-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes shake-top {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 0;
+              transform-origin: 50% 0;
+    }
+    10% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+    80% {
+      -webkit-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+    }
+    90% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+  }
+  @keyframes shake-top {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 0;
+              transform-origin: 50% 0;
+    }
+    10% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+    80% {
+      -webkit-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+    }
+    90% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+  }
+  
+/*--------------------------------------------------------------------*/  
+
+.TOBoxTarjetasFiesta{
+    margin-top: 30px;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.TOTarjetasFiesta{
+    display: flex;
+    flex-direction:column;
+    height: 350px;
+    margin-top: 20px;
+   padding: 40px 25px;
+    width: 20%;
+    border-radius: 30px;
+   margin-bottom: 100px;
+    background-color:#FCF6F1;
+   
+   align-items: center;
+   justify-content: space-around;
+   
+}
+.TOTarjetasFiesta img{
+    width: 40px;
+
+   
+}
+.iconoRegalo{
+    width: 100px;
+    -webkit-animation: wobble-hor-bottom 1s ease-in 1s infinite both;
+	        animation: wobble-hor-bottom 1s ease-in 1s infinite both;
+    margin-top: 50px;
+}
+.wobble-hor-bottom {
+	-webkit-animation: wobble-hor-bottom 1s ease-in 1s infinite both;
+	        animation: wobble-hor-bottom 1s ease-in 1s infinite both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2024-1-31 13:57:4
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes wobble-hor-bottom {
+    0%,
+    100% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateX(-30px) rotate(-6deg);
+              transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+      -webkit-transform: translateX(15px) rotate(6deg);
+              transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+      -webkit-transform: translateX(-15px) rotate(-3.6deg);
+              transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+      -webkit-transform: translateX(9px) rotate(2.4deg);
+              transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+      -webkit-transform: translateX(-6px) rotate(-1.2deg);
+              transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
+  @keyframes wobble-hor-bottom {
+    0%,
+    100% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateX(-30px) rotate(-6deg);
+              transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+      -webkit-transform: translateX(15px) rotate(6deg);
+              transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+      -webkit-transform: translateX(-15px) rotate(-3.6deg);
+              transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+      -webkit-transform: translateX(9px) rotate(2.4deg);
+              transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+      -webkit-transform: translateX(-6px) rotate(-1.2deg);
+              transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
+  .TOSeccionSeis{
+    width: 100%;
+    height: 110vh;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://cdn.pixabay.com/photo/2021/09/06/05/55/love-6600904_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    filter: brightness(120%);
+    background-attachment: fixed;
+
+  }
+  .footer-boda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/fondoOro.png?raw=true);
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    background-color:#FCF6F1;
+   
+  }
+
+  .footer-boda h1{
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 102px;
+    color: #363535;
+    margin: 20px;
+    z-index: 1;
+    opacity: 4;
+    
+
+  }
+  .footer-boda p{
+    font-family: Quicksand, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 45px;
+    margin-top: 40px;
+    color: #000000;
+    margin: 20px;
+   
+  }
+  .footer-boda p:hover{
+    color:#bfa880;
+  }
+  .footer-Invito{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    
+
+  }
+  
+  .footer-Invito p{
+   
+    font-family: Quicksand, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 45px;
+    color: #000000;
+  
+  }
+ 
+  .footer-Invito img{
+    width: 80px;
+    margin-top: -10px;
+  }
