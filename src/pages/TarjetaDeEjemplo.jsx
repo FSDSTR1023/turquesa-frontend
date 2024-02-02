@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import fetchHtml from '../api/funcionHtml';
 
 const TarjetaDeEjemplo = () => {
     const [htmlContent, setHtmlContent] = useState('');
 
-    const tarjeta = null;
 
     const manejarCompra = ()=> {
         

@@ -7,8 +7,6 @@ import TarjetaDeEjemplo from './pages/TarjetaDeEjemplo';
 import GestionDeInvitados from './pages/GestionDeInvitados'; // Importa el nuevo componente
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [conectado, setConectado] = useState(false);
 
   return (
     <Router>
