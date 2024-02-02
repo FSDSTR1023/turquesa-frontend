@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import TarjetaOro from '../components/tarjetas/tarjetaOro';
 
 const TarjetaDeEjemplo = () => {
     const [htmlContent, setHtmlContent] = useState('');
@@ -23,8 +24,15 @@ const TarjetaDeEjemplo = () => {
         fetchHtml();
     }, []);
 
+    const idtarjetaEjemplo = 12345678;
+    const tarjetaName = "tarjetaEjemplo";
+
     return (
         <div>
+            {tarjetaName === "tarjetaEjemplo" && <TarjetaOro idTarjeta={idtarjetaEjemplo} />}
+            {tarjetaName === "tarjetaEjemplo1" && <TarjetaPlata idTarjeta={idtarjetaEjemplo} />}
+            {tarjetaName === "tarjetaEjemplo2" && <TarjetaBronce idTarjeta={idtarjetaEjemplo} />}
+
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
             <button onClick={()=>manejarCompra()}>Comprar</button>
         </div>
