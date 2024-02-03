@@ -5,6 +5,10 @@ import PaginaPrincipal from './pages/PaginaPrincipal';
 import EditarTarjeta from './pages/EditarTarjeta';
 import TarjetaDeEjemplo from './pages/TarjetaDeEjemplo';
 import GestionDeInvitados from './pages/GestionDeInvitados'; // Importa el nuevo componente
+import "./diseñop.css";
+import SignInForm from "./SignIn";
+import SignUpForm from "../SignUp";
+
 
 function App() {
 

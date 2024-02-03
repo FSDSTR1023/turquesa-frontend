@@ -3,17 +3,17 @@ function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const value = evt.target.value;
     setState({
       ...state,
-      [evt.target.name]: value
+      [evt.target.name]: value,
     });
   };
 
-  const handleOnSubmit = evt => {
+  const handleOnSubmit = (evt) => {
     evt.preventDefault();
 
     const { name, email, password } = state;
@@ -24,7 +24,7 @@ function SignUpForm() {
     for (const key in state) {
       setState({
         ...state,
-        [key]: ""
+        [key]: "",
       });
     }
   };
@@ -32,7 +32,7 @@ function SignUpForm() {
   return (
     <div className="form-container sign-up-container">
       <form onSubmit={handleOnSubmit}>
-        <h1>Create Account</h1>
+        <h1>Crea tu cuenta</h1>
         <div className="social-container">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
@@ -44,7 +44,7 @@ function SignUpForm() {
             <i className="fab fa-linkedin-in" />
           </a>
         </div>
-        <span>or use your email for registration</span>
+        <span>o utiliza tu correo electrónico para registrarte</span>
         <input
           type="text"
           name="name"
@@ -66,7 +66,7 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button>Sign Up</button>
+        <button>REGISTRARSE</button>
       </form>
     </div>
   );

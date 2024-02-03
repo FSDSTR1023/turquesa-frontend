@@ -2,17 +2,17 @@ import React from "react";
 function SignInForm() {
   const [state, setState] = React.useState({
     email: "",
-    password: ""
+    password: "",
   });
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     const value = evt.target.value;
     setState({
       ...state,
-      [evt.target.name]: value
+      [evt.target.name]: value,
     });
   };
 
-  const handleOnSubmit = evt => {
+  const handleOnSubmit = (evt) => {
     evt.preventDefault();
 
     const { email, password } = state;
@@ -21,7 +21,7 @@ function SignInForm() {
     for (const key in state) {
       setState({
         ...state,
-        [key]: ""
+        [key]: "",
       });
     }
   };
@@ -29,7 +29,7 @@ function SignInForm() {
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
-        <h1>Sign in</h1>
+        <h1>Inicio de sesion</h1>
         <div className="social-container">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
@@ -41,7 +41,7 @@ function SignInForm() {
             <i className="fab fa-linkedin-in" />
           </a>
         </div>
-        <span>or use your account</span>
+        <span>o usa tu cuenta</span>
         <input
           type="email"
           placeholder="Email"
@@ -56,8 +56,8 @@ function SignInForm() {
           value={state.password}
           onChange={handleChange}
         />
-        <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <a href="#">Has olvidado tu contraseña?</a>
+        <button>Accede</button>
       </form>
     </div>
   );

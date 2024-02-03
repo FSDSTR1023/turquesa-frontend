@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../styles/diseñop.css";
+import "./styles.css";
 import SignInForm from "./SignIn";
-import SignUpForm from "./SignUp";
+import SignUpForm from "../SignUp";
 
-export default function Ventanalogin() {
+export default function App() {
   const [type, setType] = useState("signIn");
   const handleOnClick = (text) => {
     if (text !== type) {
@@ -15,16 +15,17 @@ export default function Ventanalogin() {
     "container " + (type === "signUp" ? "right-panel-active" : "");
   return (
     <div className="App">
-      <h2>Sign in/up Form</h2>
+      <h2>Sign in/up </h2>
       <div className={containerClass} id="container">
         <SignUpForm />
         <SignInForm />
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
+              <h1>Bienvenido de nuevo!</h1>
               <p>
-                To keep connected with us please login with your personal info
+                Para mantenerse conectado con nosotros, inicie sesión con su
+                información personal
               </p>
               <button
                 className="ghost"
@@ -35,14 +36,14 @@ export default function Ventanalogin() {
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
+              <h1>Bienvenidos!</h1>
+              <p>Invitaciones digitales para vuestra boda!</p>
               <button
                 className="ghost "
                 id="signUp"
                 onClick={() => handleOnClick("signUp")}
               >
-                Sign Up
+                Registrate
               </button>
             </div>
           </div>
