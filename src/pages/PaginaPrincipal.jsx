@@ -1,11 +1,9 @@
-/* eslint-disable react/jsx-key */
 import { useState, useEffect } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
 import { getTarjetas } from '../api/tarjeta.api.js';
-import TarjetaOro from '../components/TarjetaOro.jsx';
 
 
 const PaginaPrincipal = () => {
@@ -13,10 +11,8 @@ const PaginaPrincipal = () => {
     
 
     useEffect(() => {
-        console.log("Aqui entra")
         async function getTasksResponse() {
           try {
-            console.log("Aqui entra - 2")
             const response = await getTarjetas();
             setTarjetas(response.data);
             console.log('Tarjetas: ', tarjetas);
@@ -62,9 +58,9 @@ const PaginaPrincipal = () => {
                 <div className='tarjetasDeMuestra'>
                     {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
-                <div className='buttonTarjetaOro'>
+                {/* <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
-                 </div>
+                 </div> */}
 
             </section>
         </div>
