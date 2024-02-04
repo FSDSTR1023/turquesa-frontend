@@ -1,0 +1,25 @@
+.gestion-invitados-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto; /* Center the container on the page */
+  max-width: 1200px; /* Set a max-width to maintain layout integrity */
+  background-color: #fff; /* Use a white background for content areas */
+  border-radius: 8px; /* Match the border-radius from your design */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  font-family: 'Montserrat', sans-serif; /* Consistent font-family */
+  color: rgba(50,56,66,1); /* Text color from your palette */
+  gap: 20px; /* Space between child elements */
+}
+
+/* Further enhancements could include specific child styling */
+.gestion-invitados-container > header {
+  background-color: rgba(82,65,209,1); /* Header background from your palette */
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px 8px 0 0; /* Only round the top corners */
+  font-size: 1.5rem; /* Larger font size for headers */
+}
+
+
+
