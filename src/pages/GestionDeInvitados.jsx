@@ -82,7 +82,7 @@ function GestionDeInvitados() {
         ) : (
           <button
             onClick={handleSendInvitations}
-            className="send-invitations-btn"
+            className="send-invitations-btn" // mostrar como notificacion - Juan sugiere window.alert
           >
             Enviar Invitaciones
           </button>
