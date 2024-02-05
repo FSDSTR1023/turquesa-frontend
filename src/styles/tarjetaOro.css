@@ -348,7 +348,7 @@
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-*
+/*
  * ----------------------------------------
  * animation shake-top
  * ----------------------------------------
@@ -426,7 +426,7 @@
     margin-top: 30px;
     width: 75%;
     display: flex;
-    align-items: center;
+   align-items: center;
     justify-content: space-around;
 }
 .TOTarjetasFiesta{
@@ -446,6 +446,11 @@
 }
 .TOTarjetasFiesta img{
     width: 40px;
+    height: auto;
+    position: relative;
+    
+    
+
 
 
     
@@ -457,6 +462,8 @@
     -webkit-animation: wobble-hor-bottom 1s ease-in 1s infinite both;
 	        animation: wobble-hor-bottom 1s ease-in 1s infinite both;
     margin-top: 50px;
+    position: relative;
+    height: auto;
 
 }
 .wobble-hor-bottom {
@@ -610,4 +617,5 @@
   .footer-Invito img{
     width: 80px;
     margin-top: -10px;
+    position: relative;
   }

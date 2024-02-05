@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -40,7 +40,7 @@ const TarjetaOro = () => {
         <div className="TOTextoIntroduccion ColorTransparente">
           <h2 id="fechaEnlace" className="fechaEnlace">1.4.2024</h2>
           <h1 id="Pareja" className="Pareja">Manuel & Laura</h1>
-          <p id="FraseBienvenida" className="FraseBienvenida"> "Todos somos mortales,<br /> hasta el primer beso y la segunda copa de vino" </p>
+          <p id="FraseBienvenida" className="FraseBienvenida">"Todos somos mortales,<br /> hasta el primer beso y la segunda copa de vino"</p>
         </div>
       </header>
       <section className="TOSeccionDos">
@@ -107,7 +107,11 @@ const TarjetaOro = () => {
         
         <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, ]}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
       spaceBetween={50}
       slidesPerView={3}
      //navigation
@@ -116,7 +120,7 @@ const TarjetaOro = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide><img id="fotografiaPareja1" src={tarjeta.fotografiaPareja1}/></SwiperSlide>
+      {/*<SwiperSlide><img id="fotografiaPareja1" src={tarjeta.fotografiaPareja1}/></SwiperSlide>*/}
       <SwiperSlide><img id="fotografiaPareja2" src="https://cdn.pixabay.com/photo/2015/03/30/12/35/sunset-698501_1280.jpg"/></SwiperSlide>
       <SwiperSlide><img id="fotografiaPareja3" src="https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_1280.jpg"/></SwiperSlide>
       <SwiperSlide><img id="fotografiaPareja4" src="https://cdn.pixabay.com/photo/2016/11/22/19/05/wedding-1850074_1280.jpg"/></SwiperSlide>
