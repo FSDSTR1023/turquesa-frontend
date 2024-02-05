@@ -33,7 +33,7 @@ function SignUpForm() {
     <div className="form-container sign-up-container">
       <form onSubmit={handleOnSubmit}>
         <h1>Crea tu cuenta</h1>
-        <div className="social-container">
+        <div className="socialContainer">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
           </a>
@@ -66,7 +66,7 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button>REGISTRARSE</button>
+        <button>Registrarse</button>
       </form>
     </div>
   );

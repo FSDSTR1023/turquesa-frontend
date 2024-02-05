@@ -1,5 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {useUsuario} from "./UsuarioContexto";
+
 function SignInForm() {
+  const {logIn} = useUsuario();
   const [state, setState] = React.useState({
     email: "",
     password: "",
@@ -12,11 +15,10 @@ function SignInForm() {
     });
   };
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault();
-
+    
     const { email, password } = state;
-    alert(`You are login with email: ${email} and password: ${password}`);
 
     for (const key in state) {
       setState({
@@ -24,12 +26,29 @@ function SignInForm() {
         [key]: "",
       });
     }
+
+    const tryLogin = async () => {
+      await logIn({"email":email, "contraseña":password})
+        .then((user)=>{
+          if(!user || !user.email) {
+            console.log("User found:"+user);
+            alert(`Has iniciado sesión correctamente`);
+          } else {
+            alert("No se ha podido iniciar sesión. Email o contraseña inválidos");
+          }
+        }
+        ).catch((error)=> {
+          console.log("Error al realizar el login: ", error);
+        });
+    }
+
+    await tryLogin();
   };
 
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
-        <h1>Inicio de sesion</h1>
+        <h1>Inicio de sesión</h1>
         <div className="social-container">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
@@ -56,8 +75,8 @@ function SignInForm() {
           value={state.password}
           onChange={handleChange}
         />
-        <a href="#">Has olvidado tu contraseña?</a>
-        <button>Accede</button>
+        <a href="#">¿Has olvidado tu contraseña?</a>
+        <button>Acceder</button>
       </form>
     </div>
   );

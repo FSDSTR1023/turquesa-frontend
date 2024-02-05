@@ -11,8 +11,10 @@ export const UsuarioProvider = ({children}) => {
         console.log('User: ',user);
         const response = await login(user);
         console.log('Response: ', response);
-        setUsuario(response.data);
+        setUsuario({id:response.data._id, email:response.data.email});
         setIsAuthenticated(true);
+        console.log("Contante usuario:",usuario);
+        return response.data;
     }
 
     const logOut = () => {
@@ -20,7 +22,7 @@ export const UsuarioProvider = ({children}) => {
         setIsAuthenticated(false);
     }
 
-    const register = (user) => {
+    const register = async (user) => {
         
     }
 
