@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from 'react';
-import { login } from '../api/usuario.api.js';
+import { login, registro } from '../api/usuario.api.js';
 
 const UsuarioContexto = createContext();
 
@@ -13,7 +13,6 @@ export const UsuarioProvider = ({children}) => {
         console.log('Response: ', response);
         setUsuario({id:response.data._id, email:response.data.email});
         setIsAuthenticated(true);
-        console.log("Contante usuario:",usuario);
         return response.data;
     }
 
@@ -23,7 +22,11 @@ export const UsuarioProvider = ({children}) => {
     }
 
     const register = async (user) => {
-        
+        console.log('User: ',user);
+        const response = await registro(user);
+        setUsuario({id:response.data._id, email:response.data.email});
+        setIsAuthenticated(true);
+        return response.data;
     }
 
     return (

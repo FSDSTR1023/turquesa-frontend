@@ -1,8 +1,10 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {useUsuario} from "./UsuarioContexto";
+import { useNavigate } from 'react-router-dom';
 
 function SignInForm() {
   const {logIn} = useUsuario();
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     email: "",
     password: "",
@@ -31,10 +33,11 @@ function SignInForm() {
       await logIn({"email":email, "contraseña":password})
         .then((user)=>{
           if(!user || !user.email) {
+            alert("No se ha podido iniciar sesión. Email o contraseña inválidos");
+          } else {
             console.log("User found:"+user);
             alert(`Has iniciado sesión correctamente`);
-          } else {
-            alert("No se ha podido iniciar sesión. Email o contraseña inválidos");
+            navigate("/");
           }
         }
         ).catch((error)=> {

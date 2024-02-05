@@ -1,5 +1,9 @@
 import React from "react";
+import {useUsuario} from "./UsuarioContexto";
+import { useNavigate } from 'react-router-dom';
 function SignUpForm() {
+  const {register} = useUsuario();
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     name: "",
     email: "",
@@ -13,7 +17,7 @@ function SignUpForm() {
     });
   };
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault();
 
     const { name, email, password } = state;
