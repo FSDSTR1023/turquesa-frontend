@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/tarjetaOro.css'
-function TarjetaOro() {
+function TarjetaOro1() {
     const [htmlContent, setHtmlContent] = useState('');
 
     useEffect(() => {
@@ -22,4 +22,4 @@ function TarjetaOro() {
     );
 }
 
-export default TarjetaOro;
+export default TarjetaOro1;

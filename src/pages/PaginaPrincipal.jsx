@@ -5,8 +5,7 @@ import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
 import { getTarjetas } from '../api/tarjeta.api.js';
-import TarjetaOro from '../components/TarjetaOro.jsx';
-
+import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
 
 const PaginaPrincipal = () => {
     var [tarjetas, setTarjetas] = useState([]);
@@ -62,11 +61,14 @@ const PaginaPrincipal = () => {
                 <div className='tarjetasDeMuestra'>
                     {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
-                {/* <div className='buttonTarjetaOro'>
+               {/*  { <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
-                 </div> */}
+    </div> }*/}
+    
+
 
             </section>
+            <TarjetaOro></TarjetaOro>
         </div>
     );
 }
