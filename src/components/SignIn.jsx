@@ -1,5 +1,10 @@
 import React from "react";
+import {useUsuario} from "./UsuarioContexto";
+import { useNavigate } from 'react-router-dom';
+
 function SignInForm() {
+  const {logIn} = useUsuario();
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     email: "",
     password: "",
@@ -12,11 +17,10 @@ function SignInForm() {
     });
   };
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault();
-
+    
     const { email, password } = state;
-    alert(`You are login with email: ${email} and password: ${password}`);
 
     for (const key in state) {
       setState({
@@ -24,11 +28,29 @@ function SignInForm() {
         [key]: "",
       });
     }
+
+    const tryLogin = async () => {
+      await logIn({"email":email, "contraseña":password})
+        .then((user)=>{
+          if(!user || !user.email) {
+            alert("No se ha podido iniciar sesión. Email o contraseña inválidos");
+          } else {
+            alert(`Has iniciado sesión correctamente`);
+            navigate("/");
+          }
+        }
+        ).catch((error)=> {
+          console.log("Error al realizar el login: ", error);
+        });
+    }
+
+    await tryLogin();
   };
 
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
+        
         <h1 className="">Inicio de sesion</h1>
         <div className="social-container">
           <a href="#" className="social">
@@ -56,8 +78,8 @@ function SignInForm() {
           value={state.password}
           onChange={handleChange}
         />
-        <a href="#">Has olvidado tu contraseña?</a>
-        <button>Accede</button>
+        <a href="#">¿Has olvidado tu contraseña?</a>
+        <button>Acceder</button>
       </form>
     </div>
   );

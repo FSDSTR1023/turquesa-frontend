@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from 'react';
-import { login } from '../api/usuario.api.js';
+import { login, registro } from '../api/usuario.api.js';
 
 const UsuarioContexto = createContext();
 
@@ -11,8 +11,9 @@ export const UsuarioProvider = ({children}) => {
         console.log('User: ',user);
         const response = await login(user);
         console.log('Response: ', response);
-        setUsuario(response.data);
+        setUsuario({id:response.data._id, email:response.data.email});
         setIsAuthenticated(true);
+        return response.data;
     }
 
     const logOut = () => {
@@ -20,8 +21,12 @@ export const UsuarioProvider = ({children}) => {
         setIsAuthenticated(false);
     }
 
-    const register = (user) => {
-        
+    const register = async (user) => {
+        console.log('User: ',user);
+        const response = await registro(user);
+        setUsuario({id:response.data._id, email:response.data.email});
+        setIsAuthenticated(true);
+        return response.data;
     }
 
     return (
