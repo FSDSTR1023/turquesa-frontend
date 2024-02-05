@@ -35,7 +35,6 @@ function SignInForm() {
           if(!user || !user.email) {
             alert("No se ha podido iniciar sesión. Email o contraseña inválidos");
           } else {
-            console.log("User found:"+user);
             alert(`Has iniciado sesión correctamente`);
             navigate("/");
           }

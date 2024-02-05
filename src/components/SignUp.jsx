@@ -31,6 +31,23 @@ function SignUpForm() {
         [key]: "",
       });
     }
+
+    const tryRegister = async () => {
+      await register({"email":email, "contraseña":password})
+        .then((user)=>{
+          if(!user || !user.email) {
+            alert("No se ha podido realizar el registro");
+          } else {
+            alert(`Te has registrado correctamente`);
+            navigate("/");
+          }
+        })
+        .catch((error)=>{
+          console.log("Error al realizar el registro: ", error);
+        });
+    }
+
+    await tryRegister();
   };
 
   return (
