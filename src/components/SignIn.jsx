@@ -29,7 +29,7 @@ function SignInForm() {
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
-        <h1>Inicio de sesion</h1>
+        <h1 className="">Inicio de sesion</h1>
         <div className="social-container">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />

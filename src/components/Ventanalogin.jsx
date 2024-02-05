@@ -14,7 +14,7 @@ export default function App() {
   const containerClass =
     "container " + (type === "signUp" ? "right-panel-active" : "");
   return (
-    <div className="App">
+    <div className="VentanaloginApp">
       <h2>Sign in/up </h2>
       <div className={containerClass} id="container">
         <SignUpForm />
