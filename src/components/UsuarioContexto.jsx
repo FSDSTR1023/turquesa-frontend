@@ -24,6 +24,7 @@ export const UsuarioProvider = ({children}) => {
     const register = async (user) => {
         console.log('User: ',user);
         const response = await registro(user);
+        console.log('Response: ', response);
         setUsuario({id:response.data._id, email:response.data.email});
         setIsAuthenticated(true);
         return response.data;
