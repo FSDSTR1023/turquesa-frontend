@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {useUsuario} from "./UsuarioContexto";
 
-const Navbar = (conectado) => {
+const Navbar = () => {
     const {authenticated} = useUsuario();
     const {logOut} = useUsuario();
 
