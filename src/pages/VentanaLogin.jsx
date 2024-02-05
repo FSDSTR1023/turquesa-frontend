@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "./styles.css";
-import SignInForm from "./SignIn";
-import SignUpForm from "../SignUp";
+import { useState } from "react";
+// import "../styles/diseñop.css";
+import SignInForm from "../components/SignIn";
+import SignUpForm from "../components/SignUp";
 
-export default function App() {
+const VentanaLogin = () => {
   const [type, setType] = useState("signIn");
   const handleOnClick = (text) => {
     if (text !== type) {
@@ -22,7 +22,7 @@ export default function App() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Bienvenido de nuevo!</h1>
+              <h1>¡Bienvenido de nuevo!</h1>
               <p>
                 Para mantenerse conectado con nosotros, inicie sesión con su
                 información personal
@@ -32,18 +32,18 @@ export default function App() {
                 id="signIn"
                 onClick={() => handleOnClick("signIn")}
               >
-                Sign In
+                Iniciar sesión
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Bienvenidos!</h1>
-              <p>Invitaciones digitales para vuestra boda!</p>
+              <h1>¡Bienvenido!</h1>
+              <p>¡Invitaciones digitales para vuestra boda!</p>
               <button
                 className="ghost "
                 id="signUp"
                 onClick={() => handleOnClick("signUp")}
               >
-                Registrate
+                Regístrate
               </button>
             </div>
           </div>
@@ -52,3 +52,5 @@ export default function App() {
     </div>
   );
 }
+
+export default VentanaLogin;

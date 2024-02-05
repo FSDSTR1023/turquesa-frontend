@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import {useUsuario} from "../components/UsuarioContexto";
+import { useNavigate } from 'react-router-dom';
 
 const TarjetaDeEjemplo = () => {
     const [htmlContent, setHtmlContent] = useState('');
+    const {authenticated} = useUsuario();
+    const navigate = useNavigate();
 
 
     const manejarCompra = ()=> {
-        
+        if (authenticated) {
+            // navigate();
+        } else {
+            navigate("/login");
+        }
     }
 
     useEffect(() => {

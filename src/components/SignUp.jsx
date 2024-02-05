@@ -1,5 +1,9 @@
 import React from "react";
+import {useUsuario} from "./UsuarioContexto";
+import { useNavigate } from 'react-router-dom';
 function SignUpForm() {
+  const {register} = useUsuario();
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     name: "",
     email: "",
@@ -13,7 +17,7 @@ function SignUpForm() {
     });
   };
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault();
 
     const { name, email, password } = state;
@@ -27,13 +31,30 @@ function SignUpForm() {
         [key]: "",
       });
     }
+
+    const tryRegister = async () => {
+      await register({"email":email, "contraseña":password})
+        .then((user)=>{
+          if(!user || !user.email) {
+            alert("No se ha podido realizar el registro");
+          } else {
+            alert(`Te has registrado correctamente`);
+            navigate("/");
+          }
+        })
+        .catch((error)=>{
+          console.log("Error al realizar el registro: ", error);
+        });
+    }
+
+    await tryRegister();
   };
 
   return (
     <div className="form-container sign-up-container">
       <form onSubmit={handleOnSubmit}>
         <h1>Crea tu cuenta</h1>
-        <div className="social-container">
+        <div className="socialContainer">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
           </a>
@@ -66,7 +87,7 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button>REGISTRARSE</button>
+        <button>Registrarse</button>
       </form>
     </div>
   );
