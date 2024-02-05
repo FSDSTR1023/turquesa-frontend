@@ -214,7 +214,7 @@ const TarjetaOro = () => {
           <h1 className="Pareja" style={{ fontSize: '55px' }}>Compartimos este día junto a ti</h1>
           <p className="FraseBienvenida">Comparte tus fotos y vídeos de este hermoso día</p>
           <p id="NombreParejaInstagram" className="FraseBienvenida"> #manuelylaura</p>
-          <img id="fotografiaPareja7" style={{ width: '100px', marginTop: '40px', marginBottom: '20px' }} src="https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/instagram.png?raw=true" alt="instagram" />
+          <img id="fotografiaPareja7" style={{ width: '100px', marginTop: '40px', marginBottom: '20px', position: 'relative', height: 'auto'}} src="https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/instagram.png?raw=true" alt="instagram" />
           <button id="enlaceInstagram" className="TOButton">Ver en instagram</button>
         </div>
       </section>

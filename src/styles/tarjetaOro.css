@@ -616,6 +616,7 @@
  
   .footer-Invito img{
     width: 80px;
+    height: auto;
     margin-top: -10px;
     position: relative;
   }
