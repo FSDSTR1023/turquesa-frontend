@@ -57,7 +57,7 @@ const PaginaPrincipal = () => {
             <section className='screenTres'> {/*Lista de tarjetas*/}
                 <h1>Ver modelos</h1>
                 <div className='tarjetasDeMuestra'>
-                    {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
                {/*  { <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
