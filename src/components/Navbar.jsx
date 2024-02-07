@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import {useUsuario} from "./UsuarioContexto";
 
-const Navbar = () => {
-    const {authenticated} = useUsuario();
-    const {logOut} = useUsuario();
+const Navbar = (conectado) => {
+
+    const logOut = () => {}
 
     return (
         <nav>
@@ -14,7 +13,7 @@ const Navbar = () => {
             </div>
             <div className="navInicio">
                 <ul>
-                    {authenticated ? (
+                    {conectado ? (
                         <>
                             <li>
                                 <Link to='/'>Mis tarjetas</Link>
@@ -26,7 +25,7 @@ const Navbar = () => {
                                     <Link to='/gestion-invitados'>Gestión de Invitados</Link> {/* Nuevo enlace */}
                             </li>
                             <li>
-                                <p onClick={logOut}>Logout</p>
+                                <Link to='/' onClick={logOut}>Logout</Link>
                             </li>
                         </>
                     ) : (
@@ -35,7 +34,7 @@ const Navbar = () => {
                                 <Link to='/'>Sign in</Link>
                             </li>
                             <li>
-                                <Link to='/login'>Log in</Link>
+                                <Link to='/'>Log in</Link>
                             </li>
                             <li className="line"></li>
                         </>
