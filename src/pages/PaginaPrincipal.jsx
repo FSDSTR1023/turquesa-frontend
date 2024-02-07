@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { useState, useEffect } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
@@ -7,15 +6,14 @@ import '../styles/PaginaPrincipal.css';
 import { getTarjetas } from '../api/tarjeta.api.js';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
 
+
 const PaginaPrincipal = () => {
     var [tarjetas, setTarjetas] = useState([]);
     
 
-    useEffect(() => {
-        console.log("Aqui entra")
+    useEffect(() => { console.log('entra aqui?')
         async function getTasksResponse() {
           try {
-            console.log("Aqui entra - 2")
             const response = await getTarjetas();
             setTarjetas(response.data);
             console.log('Tarjetas: ', tarjetas);
