@@ -175,20 +175,24 @@ nav a:focus {
 }
 .imagenMuestra{
 position: relative;
-background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/ejemplo%20de%20invitacion.jpg?raw=true);
+width: 100%;
+height: 554px;
+margin-top: -10%;
+
+/*background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/ejemplo%20de%20invitacion.jpg?raw=true);
 background-size: cover;
 background-position: center center; 
 background-repeat: no-repeat;
 height: 300vh;
 /*top: 172px; 
 left: 729px;*/
-width: 100%; 
+/*width: 100%; 
 height: 544px; 
 border-radius: 8px; 
 box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12);
 opacity: 1; /* Inicialmente oculta */
-transition: transform 8s ease;
-overflow: hidden;
+/*transition: transform 8s ease;
+overflow: hidden;*/
 
 
 }

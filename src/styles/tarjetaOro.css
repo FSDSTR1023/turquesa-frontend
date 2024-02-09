@@ -593,6 +593,12 @@
   }
   .footer-boda p:hover{
     color:#bfa880;
+    
+    
+  }
+  .footer-boda a{
+    text-decoration: none;
+    color: inherit;
   }
   .footer-Invito{
     display: flex;
@@ -611,6 +617,7 @@
     font-size: 15px;
     line-height: 45px;
     color: #000000;
+
   
   }
  

@@ -33,6 +33,7 @@ const TarjetaOro = () => {
     }, 1000);
 
     }, []);
+    
 
   return (
     <>
@@ -40,7 +41,7 @@ const TarjetaOro = () => {
         <div className="TOTextoIntroduccion ColorTransparente">
           <h2 id="fechaEnlace" className="fechaEnlace">1.4.2024</h2>
           <h1 id="Pareja" className="Pareja">Manuel & Laura</h1>
-          <p id="FraseBienvenida" className="FraseBienvenida">"Todos somos mortales,<br /> hasta el primer beso y la segunda copa de vino"</p>
+          <p id="FraseBienvenida" className="FraseBienvenida">&laquo;Todos somos mortales,<br /> hasta el primer beso y la segunda copa de vino&raquo;</p>
         </div>
       </header>
       <section className="TOSeccionDos">
@@ -65,10 +66,10 @@ const TarjetaOro = () => {
             <div><h2>Ceremonia</h2><hr className="linea" />
               <h3>Día</h3>
               <p id="fechaEnlaceSemanaCeremonia">Sábado 1 de Abril <span id="horaCeremonia">17 h</span></p>
-              <button className="TOButton">AGENDAR</button>
+              <button id="agendarCeremonia" className="TOButton">AGENDAR</button>
               <h3>Lugar</h3>
               <p id="lugarCeremonia">Parroquia Nuestra señora de Lujan</p>
-              <button className="TOButton">Confirmar Asistencia</button>
+              <button id="confirmarAsistenciaCeremonia" className="TOButton">Confirmar Asistencia</button>
               <h3>Dirección</h3>
               <p id="DireccionCeremonia">Av. Pergamino 203- Barcelona</p>
               <button className="TOButton">¿Cómo llegar?</button>
@@ -78,10 +79,10 @@ const TarjetaOro = () => {
             <div><h2>Celebracion</h2><hr className="linea" />
               <h3>Día</h3>
               <p id="fechaEnlaceSemanaCelebracion">Sábado 1 de Abril <span id="horaCelebracion">20 h</span></p>
-              <button className="TOButton">AGENDAR</button>
+              <button id="agendarCelebracion"className="TOButton">AGENDAR</button>
               <h3>Lugar</h3>
               <p id="lugarCelebracion">Salon de mega fiestas</p>
-              <button className="TOButton">Confirmar Asistencia</button>
+              <button id="confirmarAsistenciaCelebracion" className="TOButton">Confirmar Asistencia</button>
               <h3>Dirección</h3>
               <p id="DireccionCelebracion">Av. Los Reartes- Barcelona</p>
               <button className="TOButton">¿Cómo llegar?</button>
@@ -222,11 +223,11 @@ const TarjetaOro = () => {
         <div className="footer-boda">
           <div style={{ opacity: '2' }}><h1>Manuel & Laura</h1></div>
           <div>
-            <p>CONFIRMAR ASISTENCIA</p>
-            <p>CONFIRMAR ASISTENCIA A LA CELEBRACIÓN</p>
-            <p>SUGERIR CANCIÓN</p>
-            <p>AGENDAR CELEBRACIÓN</p>
-            <p>AGENDAR CEREMONIA</p>
+            <a href="#confirmarAsistenciaCeremonia"><p>CONFIRMAR ASISTENCIA</p></a> 
+            <a href="#confirmarAsistenciaCelebracion"><p>CONFIRMAR ASISTENCIA A LA CELEBRACIÓN</p></a>
+            <a href="#MusicaSugerida"><p>SUGERIR CANCIÓN</p></a>
+            <a href="#agendarCelebracion"><p>AGENDAR CELEBRACIÓN</p></a> 
+            <a href="#agendarCeremonia"><p>AGENDAR CEREMONIA</p></a> 
           </div>
         </div>
         <div className="footer-Invito">

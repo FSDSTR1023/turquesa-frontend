@@ -1,27 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
-import { getTarjetas } from '../api/tarjeta.api.js';
+import { useTarjeta } from '../components/TarjetaContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
+import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
 
 
 const PaginaPrincipal = () => {
-    var [tarjetas, setTarjetas] = useState([]);
+   const { tarjetas } = useTarjeta ();
+   const { obtenerListaDeTarjetas } = useTarjeta ();
+
     
 
-    useEffect(() => { console.log('entra aqui?')
-        async function getTasksResponse() {
-          try {
-            const response = await getTarjetas();
-            setTarjetas(response.data);
-            console.log('Tarjetas: ', tarjetas);
-          } catch (error) {
-            console.log(error);
-          }
-        }
-        getTasksResponse();
+    useEffect(() => { 
+        obtenerListaDeTarjetas ()
+
+ 
       }, []);
 
     return (
@@ -40,7 +36,8 @@ const PaginaPrincipal = () => {
 
                             </div>
                         </div>
-                        <div className='imagenMuestra'></div>
+                        <div className='imagenMuestra'><EjemploDispositivo/></div>
+                        
                     </div>
 
 

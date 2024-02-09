@@ -1,28 +1,26 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { obtenerTarjetas } from '../api/tarjeta.api.js';
+import { getTarjetas } from '../api/tarjeta.api.js';
 
 const TarjetaContexto = createContext();
 
+
 export const TarjetaProvider = ({ children }) => {
     const [tarjetas, setTarjetas] = useState([]);
+    const [tarjeta, setTarjeta] = useState (null);
 
-    // Función para obtener las tarjetas
+  
     const obtenerListaDeTarjetas = async () => {
         try {
-            const response = await obtenerTarjetas();
+            const response = await getTarjetas();
             setTarjetas(response.data);
         } catch (error) {
             console.error('Error al obtener las tarjetas:', error);
         }
     }
 
-    // Llamamos a la función para obtener las tarjetas cuando el componente se monta
-    useEffect(() => {
-        obtenerListaDeTarjetas();
-    }, []);
 
     return (
-        <TarjetaContexto.Provider value={{ tarjetas }}>
+        <TarjetaContexto.Provider value={{ tarjetas, obtenerListaDeTarjetas, setTarjeta, tarjeta }}>
             {children}
         </TarjetaContexto.Provider>
     );
