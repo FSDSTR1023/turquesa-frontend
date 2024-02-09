@@ -1,7 +1,10 @@
+// src/components/tarjetaContexto.jsx
+
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { getTarjetas } from '../api/tarjeta.api.js';
 
 const TarjetaContexto = createContext();
+
 
 
 export const TarjetaProvider = ({ children }) => {

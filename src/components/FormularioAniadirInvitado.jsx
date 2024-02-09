@@ -10,10 +10,9 @@ function FormularioAniadirInvitado({ onAddGuest }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (guestName && guestEmail && guestSurName) {
-      onAddGuest({ name: guestName, surname: guestSurName, email: guestEmail });
+    if (guestName && guestEmail) {
+      onAddGuest({ name: guestName,  email: guestEmail });
       setGuestName('');
-      setGuestSurName('');
       setGuestEmail('');
     }
   };
@@ -26,12 +25,6 @@ function FormularioAniadirInvitado({ onAddGuest }) {
           placeholder="Nombre"
           value={guestName}
           onChange={(e) => setGuestName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Apellidos"
-          value={guestSurName}
-          onChange={(e) => setGuestSurName(e.target.value)}
         />
         <input
           type="email"
