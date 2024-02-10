@@ -1,4 +1,3 @@
-// src/pages/TarjetaDeEjemplo.jsx
 import { useEffect, useState } from 'react';
 import {useUsuario} from "../components/UsuarioContexto";
 import { useNavigate } from 'react-router-dom';

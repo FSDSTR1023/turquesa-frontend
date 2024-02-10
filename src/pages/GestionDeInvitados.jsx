@@ -16,6 +16,8 @@ import "../styles/GestionDeInvitados.css";
 import "../styles/ListaDeInvitados.css";
 import "../styles/ListaDeInvitadosEnviados.css";
 
+const hardcodedTarjetaId = "65b52c36e01dc2b66e6edae5";
+
 function GestionDeInvitados() {
     const [guests, setGuests] = useState([]);
     const [sentInvites, setSentInvites] = useState([]);
@@ -34,20 +36,21 @@ function GestionDeInvitados() {
     };
 
     const handleSendInvitations = async () => {
-        if (!tarjeta) {
-            alert('No tarjeta selected. Please select a tarjeta before sending invitations.');
-            return;
-        }
-
+        // This check is now commented out to bypass the alert since we're using a hardcoded ID.
+        // if (!tarjeta) {
+        //     alert('No tarjeta selected. Please select a tarjeta before sending invitations.');
+        //     return;
+        // }
+    
         // Attempt to create an asistente for each guest
         for (const guest of guests) {
             const asistenteData = {
                 nombre: guest.name,
                 email: guest.email, // Assuming each guest has a 'name' and 'email'
-                id_tarjeta: tarjeta._id, // Use the currently selected tarjeta's ID
+                id_tarjeta: hardcodedTarjetaId, // Use the hardcoded tarjeta ID
                 confirmacion: 'E', // Default confirmation status
             };
-
+    
             try {
                 await crearAsistente(asistenteData);
             } catch (error) {
@@ -55,7 +58,7 @@ function GestionDeInvitados() {
                 // Handle errors appropriately (e.g., notify the user of the failed operation)
             }
         }
-
+    
         // After attempting to send all invitations, fetch the updated list of asistentes
         try {
             const response = await getAsistentes();
@@ -64,11 +67,12 @@ function GestionDeInvitados() {
             console.error('Error fetching updated asistentes:', error);
             // Handle fetch error (e.g., notify the user)
         }
-
+    
         // Clear the guests list and mark the invitation process as complete
         setGuests([]);
         setInvitationsSent(true);
     };
+    
 
     return (
         <div className="gestion-invitados-container">
@@ -91,3 +95,5 @@ function GestionDeInvitados() {
 }
 
 export default GestionDeInvitados;
+
+
