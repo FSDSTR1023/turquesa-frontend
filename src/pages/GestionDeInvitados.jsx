@@ -75,8 +75,10 @@ function GestionDeInvitados() {
     
 
     return (
+    <>
+        <Navbar />
         <div className="gestion-invitados-container">
-            <Navbar />
+            
             <section className="formulario-aniadir-invitado">
                 <FormularioAniadirInvitado onAddGuest={handleAddGuest} />
             </section>
@@ -91,6 +93,7 @@ function GestionDeInvitados() {
                 onUpdateStatus={() => {}} // Define or update this function based on your needs
             />
         </div>
+        </>
     );
 }
 
