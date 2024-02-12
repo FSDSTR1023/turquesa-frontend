@@ -17,7 +17,7 @@ const Navbar = () => {
                     {authenticated ? (
                         <>
                             <li>
-                                <Link to='/'>Mis tarjetas</Link>
+                                <Link to='/mis-tarjetas'>Mis tarjetas</Link>
                             </li>
                             <li>
                                 Usuario     

@@ -1,0 +1,18 @@
+/* PaginaMisTarjetas.css */
+
+.mis-tarjetas-page-container {
+    padding: 20px;
+    text-align: center; /* Center the title */
+  }
+  
+  .mis-tarjetas-title {
+    margin-bottom: 20px; /* Space below the title */
+    /* Add other styles for the title here */
+  }
+  
+  .tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
