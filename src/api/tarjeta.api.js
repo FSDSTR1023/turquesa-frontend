@@ -3,7 +3,7 @@
 import axios from './axios.js';
 
 // Fetch tarjetas for display purposes (might not be user-specific)
-export const getTarjetasMuestra = () => axios.get('/tarjeta');
+export const getTarjetas = () => axios.get('/tarjeta');
 
 // Fetch all tarjetas (general purpose, includes all tarjetas regardless of user association)
 export const getAllTarjetas = () => axios.get('/tarjeta/all');
