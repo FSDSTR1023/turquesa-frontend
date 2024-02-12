@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.2",
     "sort-by": "^0.0.2",
-    "swiper": "^11.0.5",
+    "swiper": "^11.0.6",
     "vitest": "^1.2.1"
   },
   "devDependencies": {

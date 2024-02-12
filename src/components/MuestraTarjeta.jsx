@@ -1,3 +1,5 @@
+// src/components/MuestraTarjeta.jsx
+
 import { Link } from 'react-router-dom';
 import '../styles/MuestraTarjeta.css';
 

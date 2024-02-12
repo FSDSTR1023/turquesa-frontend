@@ -1,0 +1,55 @@
+.computer-container {
+    position: relative;
+    display: inline-block; /* Permite que el contenedor se ajuste al tamaño de la imagen */
+
+  
+   
+  
+  }
+  
+  .computer-img {
+    display: absolute;
+    width: 1060px;
+    height: auto;
+    /*max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    z-index: 1; /* Asegura que el contenido de la pantalla esté delante de la imagen del ordenador */
+    overflow: hidden;
+   
+    
+   
+  }
+ 
+  
+  .screen-computer {
+    position: absolute;
+    top: 30px;
+    left: 137px;
+    width: 780px; /* Ajusta el ancho del contenido de la pantalla */
+    height: 500px; /* Permite que la altura se ajuste automáticamente según el ancho */
+    overflow:hidden;
+    opacity: 1; /* Inicialmente oculta */
+    transition: transform 8s ease;
+    overflow: hidden;
+    border-radius: 20px;
+  
+  }
+  
+ 
+ /*.screen-computer img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 8s ease;
+   
+   
+    
+    
+  }*/
+
+  .computer-container:hover .screen-computer {
+    transform: translateY(-50%);
+    height: auto;
+    overflow-y: hidden;
+
+
+  }

@@ -1,26 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import MuestraTarjeta from '../components/MuestraTarjeta.jsx';
 import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
-import { getTarjetas } from '../api/tarjeta.api.js';
+import { useTarjeta } from '../components/TarjetaContexto.jsx';
+import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
+import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
 
 
 const PaginaPrincipal = () => {
-    var [tarjetas, setTarjetas] = useState([]);
+   const { tarjetas } = useTarjeta ();
+   const { obtenerListaDeTarjetas } = useTarjeta ();
+
     
 
-    useEffect(() => {
-        async function getTasksResponse() {
-          try {
-            const response = await getTarjetas();
-            setTarjetas(response.data);
-            console.log('Tarjetas: ', tarjetas);
-          } catch (error) {
-            console.log(error);
-          }
-        }
-        getTasksResponse();
+    useEffect(() => { 
+        obtenerListaDeTarjetas ()
+
+ 
       }, []);
 
     return (
@@ -32,14 +29,15 @@ const PaginaPrincipal = () => {
                     <div className='encabezado'>
                         <div className='izquierda'>
                             <div className='textoBienvenida'>Tu <br/>invitación<br/> web</div>
-                            <div className='rectanguloTexto'><p>Interactivas, funcionales y originales<br />Invitaciones digitales para vuestra boda <br />¡Obtén tu invitación hoy!</p></div>
+                            <div className='rectanguloTexto1'><p>Interactivas, funcionales y originales<br />Invitaciones digitales para vuestra boda <br />¡Obtén tu invitación hoy!</p></div>
                             <div className='colocarBotones'>
                                 <button className='buttomMorado'>Comprar</button>
                                 <button className='buttomMorado'>Ver Modelos</button> {/*insertar links */}
 
                             </div>
                         </div>
-                        <div className='imagenMuestra'></div>
+                        <div className='imagenMuestra'><EjemploDispositivo/></div>
+                        
                     </div>
 
 
@@ -56,13 +54,16 @@ const PaginaPrincipal = () => {
             <section className='screenTres'> {/*Lista de tarjetas*/}
                 <h1>Ver modelos</h1>
                 <div className='tarjetasDeMuestra'>
-                    {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
-                {/* <div className='buttonTarjetaOro'>
+               {/*  { <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
-                 </div> */}
+    </div> }*/}
+    
+
 
             </section>
+            <TarjetaOro></TarjetaOro>
         </div>
     );
 }

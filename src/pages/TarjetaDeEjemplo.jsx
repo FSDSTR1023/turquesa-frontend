@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {useUsuario} from "../components/UsuarioContexto";
 import { useNavigate } from 'react-router-dom';
+import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 
 const TarjetaDeEjemplo = () => {
     const [htmlContent, setHtmlContent] = useState('');
@@ -32,7 +33,7 @@ const TarjetaDeEjemplo = () => {
 
     return (
         <div>
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+           <TarjetaOro/>
             <button onClick={()=>manejarCompra()}>Comprar</button>
         </div>
     );
