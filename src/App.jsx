@@ -4,6 +4,7 @@ import EditarTarjeta from './pages/EditarTarjeta';
 import TarjetaDeEjemplo from './pages/TarjetaDeEjemplo';
 import GestionDeInvitados from './pages/GestionDeInvitados'; 
 import VentanaLogin from "./pages/VentanaLogin";
+import PaginaMisTarjetas from "./pages/PaginaMisTarjetas"
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path="/ejemplo/:id" element={<TarjetaDeEjemplo />} /> 
         <Route path="/adquirida/:id/edit" element={<EditarTarjeta />} /> 
         <Route path="/gestion-invitados" element={<GestionDeInvitados />} /> {/* Nueva ruta */}
+        <Route path="/mis-tarjetas" element={<PaginaMisTarjetas />} /> {/* Nueva ruta */}
+
         <Route path="/login" element={<VentanaLogin />} /> 
       </Routes>  
     </Router>
