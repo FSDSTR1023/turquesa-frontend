@@ -1,7 +1,6 @@
 import React from "react";
 import {useUsuario} from "./UsuarioContexto";
 import { useNavigate } from 'react-router-dom';
-
 function SignInForm() {
   const {logIn} = useUsuario();
   const navigate = useNavigate();
@@ -16,19 +15,15 @@ function SignInForm() {
       [evt.target.name]: value,
     });
   };
-
   const handleOnSubmit = async (evt) => {
     evt.preventDefault();
-    
     const { email, password } = state;
-
     for (const key in state) {
       setState({
         ...state,
         [key]: "",
       });
     }
-
     const tryLogin = async () => {
       await logIn({"email":email, "contraseña":password})
         .then((user)=>{
@@ -43,15 +38,13 @@ function SignInForm() {
           console.log("Error al realizar el login: ", error);
         });
     }
-
     await tryLogin();
   };
-
   return (
-    <div className="Sign-In-Container">
+    <div className="form-containerLogin sign-in-containerLogin">
       <form onSubmit={handleOnSubmit}>
-        <h1 className="">Inicio de sesion</h1>
-        <div className="SignIn-social-container">
+        <h1>Inicio de sesión</h1>
+        <div className="social-containerLogin">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
           </a>
@@ -83,5 +76,4 @@ function SignInForm() {
     </div>
   );
 }
-
 export default SignInForm;
