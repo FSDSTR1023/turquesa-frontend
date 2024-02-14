@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../../styles/TarjetaOro.css';
+import '../../styles/tarjetaOro.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
