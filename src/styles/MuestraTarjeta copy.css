@@ -1,24 +1,9 @@
-/* MuestraTarjeta.css */ 
-
-
 .muestraTarjetaContenedor {
-  position: relative;
-  margin-top: 50px;
-  /* width: 500px; Remover o comentar esta línea */
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.muestraTarjetaNombre, .muestraTarjetaBotonVerTarjeta {
-  position: absolute;
-  width: 100%; /* Asegúrate de que se adapte al contenedor padre */
-  left: 0;
-  text-align: center;
-  z-index: 1;
-}
+    position: relative;
+    margin-top: 50px;
+    width: 500px;
+    height: 300px;
+  }
   
   .muestraTarjetaOverlay {
     position: absolute;
