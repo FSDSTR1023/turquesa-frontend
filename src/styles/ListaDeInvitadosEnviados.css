@@ -1,59 +1,71 @@
 /* ListaDeInvitadosEnviados.css */
 
 .sent-invites-container {
-    width: 531px; /* Fixed width as per your guide */
-    margin: 40px auto; /* Center the container and provide top margin for spacing */
-    background: #FFFFFF; /* White background */
-    border-radius: 3px; /* Rounded corners */
-    border: 1px solid #F3F4F6; /* Light grey border */
-    box-shadow: 0px 8px 17px rgba(23, 26, 31, 0.2), 0px 0px 2px rgba(23, 26, 31, 0.12); /* Soft shadow for depth */
-    padding: 20px; /* Inner spacing */
-    position: relative; /* Adjusted to position relative for better responsive behavior */
-    box-sizing: border-box; /* To ensure padding does not add to the width */
-}
-
-/* Style for the invite entries */
-.invite-entry {
+    width: 75%; /* Responsive width for adaptive design */
+    margin: 40px auto; /* Centering the container with vertical spacing */
+    background: #FFFFFF; /* Consistent white background */
+    border-radius: 8px; /* Smoothed rounded corners for modern look */
+    border: 1px solid #E2E8F0; /* Soft light grey border for subtle boundary */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Unified shadow for depth */
+    padding: 20px; /* Ample inner spacing for content */
+    position: relative; /* Ensures proper stacking context */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+  }
+  
+  .invite-entry {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out the name and the checkbox */
-    margin-bottom: 10px; /* Margin between items */
+    justify-content: space-between; /* Balanced distribution of content */
+    margin-bottom: 10px; /* Consistent spacing between entries */
     padding: 10px;
-    border-bottom: 1px solid #eee; /* Subtle separator for each item */
-}
-
-/* Style for the name in the invite list */
-.invite-entry span {
-    font-size: 16px; /* Readable font size */
-    color: rgba(50,56,66,1); /* Text color from the palette */
-}
-
-/* Style for the checkbox label */
-.invite-entry label {
-    cursor: pointer; /* Cursor to indicate it's clickable */
-}
-
-/* Style for the send invitations button */
-.send-invitations-btn {
-    width: auto; /* Auto width based on content */
-    padding: 10px 20px;
-    margin-top: 20px; /* Spacing after the list */
-    background-color: rgba(82,65,209,1); /* Primary color for the button */
-    color: white;
+    border-bottom: 1px solid #E2E8F0; /* Light and soft separator */
+  }
+  
+  .invite-entry span {
+    font-size: 18px; /* Enhanced readability */
+    color: rgba(50,56,66,1); /* Dark text for contrast and focus */
+  }
+  
+  .invite-entry label {
+    cursor: pointer; /* Visual cue for interactive elements */
+    display: flex; /* Aligns checkbox and label text inline */
+    align-items: center; /* Vertical centering of text and checkbox */
+  }
+  
+  .send-invitations-btn {
+    padding: 12px 24px; /* Comfortable click area */
+    background-color: rgba(82,65,209,1); /* Vivid primary color for call-to-action */
+    color: white; /* High contrast for legibility */
     border: none;
-    border-radius: 3px; /* Consistent border radius */
-    cursor: pointer; /* Cursor to indicate it's a button */
-    font-size: 1rem;
-}
-
-.send-invitations-btn:hover {
-    background-color: rgba(62,45,160,1); /* Slightly darker on hover */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    border-radius: 4px; /* Consistency in button aesthetics */
+    cursor: pointer; /* Indicates an actionable item */
+    font-family: 'Montserrat', sans-serif; /* Harmonizing with global font choice */
+    font-size: 16px; /* Clear, legible label size */
+    margin-top: 30px; /* Space above for separation */
+    display: block; /* Ensures full-width button */
+    width: auto; /* Adjusts width to content or specified */
+    margin-left: auto; /* Aligns button to the right within its container */
+    margin-right: auto; /* Keeps button centered if desired */
+  }
+  
+  .send-invitations-btn:hover {
+    background-color: rgba(62,45,160,1); /* Slightly darker shade on hover for interactive feedback */
+  }
+  
+  /* Responsive Design Adjustments */
+  @media (max-width: 768px) {
     .sent-invites-container {
-        width: 95%; /* Full width on smaller screens */
-        padding: 10px; /* Adjust padding */
+      width: 95%; /* Maximizes use of screen space on smaller devices */
+      margin: 20px auto; /* Reduced vertical spacing */
+      padding: 15px; /* Slightly reduced padding for screen efficiency */
     }
-}
+  }
+  
+  .sent-invites-title {
+    text-align: center;
+    color: rgba(50,56,66,1); /* Adjust color to match your design */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space between title and list */
+  }
+  

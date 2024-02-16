@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comfortaa:wght@300&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300&display= intercambiar');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@300..700&display=swap');
 
 
 *{
@@ -173,20 +175,24 @@ nav a:focus {
 }
 .imagenMuestra{
 position: relative;
-background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/ejemplo%20de%20invitacion.jpg?raw=true);
+width: 100%;
+height: 554px;
+margin-top: -10%;
+
+/*background-image: url(https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/ejemplo%20de%20invitacion.jpg?raw=true);
 background-size: cover;
 background-position: center center; 
 background-repeat: no-repeat;
 height: 300vh;
 /*top: 172px; 
 left: 729px;*/
-width: 100%; 
+/*width: 100%; 
 height: 544px; 
 border-radius: 8px; 
 box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12);
 opacity: 1; /* Inicialmente oculta */
-transition: transform 8s ease;
-overflow: hidden;
+/*transition: transform 8s ease;
+overflow: hidden;*/
 
 
 }
@@ -205,7 +211,7 @@ overflow: hidden;
     transform: translateY(-78%);
 }
 
-.rectanguloTexto{
+.rectanguloTexto1{
   display: flex;
   margin-left: -100px;
   top: 706px; 
@@ -223,16 +229,15 @@ overflow: hidden;
   font-size: 20px; 
   font-weight: 400; 
   line-height: 30px; 
-  color: rgba(23,26,31,1);
-
   -webkit-animation: slide-in-left 0.5s ease-out ;
   animation: slide-in-left 0.5s ease-out ;
 
   
 }
 
-.rectanguloTexto p {
+.rectanguloTexto1 p {
   padding-left: 90px;
+  color:rgb(17, 19, 22);
 
   
 }
@@ -280,6 +285,7 @@ overflow: hidden;
   flex-direction: row;
   margin-top: 20%;
 }
+/*_________________________________________BOTÓN MORADO_______________________________*/
 .buttomMorado{
   margin: 5px;
   height: 44px; 

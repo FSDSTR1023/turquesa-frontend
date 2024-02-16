@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@300..700&display=swap');
 *{
     margin: 0px;
 }
@@ -347,7 +348,7 @@
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-/**
+/*
  * ----------------------------------------
  * animation shake-top
  * ----------------------------------------
@@ -425,7 +426,7 @@
     margin-top: 30px;
     width: 75%;
     display: flex;
-    align-items: center;
+   align-items: center;
     justify-content: space-around;
 }
 .TOTarjetasFiesta{
@@ -445,6 +446,14 @@
 }
 .TOTarjetasFiesta img{
     width: 40px;
+    height: auto;
+    position: relative;
+    
+    
+
+
+
+    
 
    
 }
@@ -453,6 +462,9 @@
     -webkit-animation: wobble-hor-bottom 1s ease-in 1s infinite both;
 	        animation: wobble-hor-bottom 1s ease-in 1s infinite both;
     margin-top: 50px;
+    position: relative;
+    height: auto;
+
 }
 .wobble-hor-bottom {
 	-webkit-animation: wobble-hor-bottom 1s ease-in 1s infinite both;
@@ -581,6 +593,12 @@
   }
   .footer-boda p:hover{
     color:#bfa880;
+    
+    
+  }
+  .footer-boda a{
+    text-decoration: none;
+    color: inherit;
   }
   .footer-Invito{
     display: flex;
@@ -599,10 +617,13 @@
     font-size: 15px;
     line-height: 45px;
     color: #000000;
+
   
   }
  
   .footer-Invito img{
     width: 80px;
+    height: auto;
     margin-top: -10px;
+    position: relative;
   }
