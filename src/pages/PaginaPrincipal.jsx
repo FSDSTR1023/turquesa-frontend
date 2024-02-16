@@ -4,11 +4,16 @@ import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
 import { getTarjetas } from '../api/tarjeta.api.js';
+import { useUsuario } from '../components/UsuarioContexto.jsx';
 
 
 const PaginaPrincipal = () => {
     var [tarjetas, setTarjetas] = useState([]);
+    const {checkIfTheresUserSaved} = useUsuario();
     
+    useEffect(() => {
+        checkIfTheresUserSaved();
+    });
 
     useEffect(() => {
         async function getTasksResponse() {
@@ -56,7 +61,7 @@ const PaginaPrincipal = () => {
             <section className='screenTres'> {/*Lista de tarjetas*/}
                 <h1>Ver modelos</h1>
                 <div className='tarjetasDeMuestra'>
-                    {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                    { tarjetas && tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
                 {/* <div className='buttonTarjetaOro'>
                  <TarjetaOro/>

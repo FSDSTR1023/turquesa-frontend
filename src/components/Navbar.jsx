@@ -5,6 +5,10 @@ const Navbar = () => {
     const {authenticated} = useUsuario();
     const {logOut} = useUsuario();
 
+    const handleLogout = async () => {
+        await logOut();
+    }
+
     return (
         <nav>
             <div className="rectangulo"></div>
@@ -26,7 +30,7 @@ const Navbar = () => {
                                     <Link to='/gestion-invitados'>Gestión de Invitados</Link> {/* Nuevo enlace */}
                             </li>
                             <li>
-                                <p onClick={logOut}>Logout</p>
+                                <p onClick={handleLogout}>Logout</p>
                             </li>
                         </>
                     ) : (

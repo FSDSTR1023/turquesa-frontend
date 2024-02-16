@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from 'react';
-import { login, registro } from '../api/usuario.api.js';
+import { login, registro, logout, checkUser } from '../api/usuario.api.js';
 
 const UsuarioContexto = createContext();
 
@@ -16,7 +16,8 @@ export const UsuarioProvider = ({children}) => {
         return response.data;
     }
 
-    const logOut = () => {
+    const logOut = async () => {
+        await logout();
         setUsuario(null);
         setIsAuthenticated(false);
     }
@@ -30,8 +31,14 @@ export const UsuarioProvider = ({children}) => {
         return response.data;
     }
 
+    const checkIfTheresUserSaved = async () => {
+        const response = await checkUser();
+        if(response.data)
+            setUsuario({id:response.data._id, email:response.data.email});
+    }
+
     return (
-        <UsuarioContexto.Provider value={{usuario, authenticated, logIn, logOut, register}}>
+        <UsuarioContexto.Provider value={{usuario, authenticated, logIn, logOut, register, checkIfTheresUserSaved}}>
             {children}
         </UsuarioContexto.Provider>
     );
