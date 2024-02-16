@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {useUsuario} from "../components/UsuarioContexto";
 import { useNavigate } from 'react-router-dom';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 
 const TarjetaDeEjemplo = () => {
-    const [htmlContent, setHtmlContent] = useState('');
     const {authenticated} = useUsuario();
     const navigate = useNavigate();
 
@@ -18,17 +17,6 @@ const TarjetaDeEjemplo = () => {
     }
 
     useEffect(() => {
-        const fetchHtml = async () => {
-            try {
-                const response = await fetch('/tarjetaOro.html');
-                const html = await response.text();
-                setHtmlContent(html);
-            } catch (error) {
-                console.error('Error fetching HTML:', error);
-            }
-        };
-
-        fetchHtml();
     }, []);
 
     return (
