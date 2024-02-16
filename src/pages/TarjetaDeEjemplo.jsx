@@ -1,28 +1,15 @@
-import { useEffect } from 'react';
-import {useUsuario} from "../components/UsuarioContexto";
-import { useNavigate } from 'react-router-dom';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
+import BotonCompra from '../components/BotonCompra';
 
 const TarjetaDeEjemplo = () => {
-    const {authenticated} = useUsuario();
-    const navigate = useNavigate();
 
-
-    const manejarCompra = ()=> {
-        if (authenticated) {
-            // navigate();
-        } else {
-            navigate("/login");
-        }
-    }
-
-    useEffect(() => {
-    }, []);
+   
 
     return (
         <div>
            <TarjetaOro/>
-            <button onClick={()=>manejarCompra()}>Comprar</button>
+           <BotonCompra/>
+        
         </div>
     );
 }

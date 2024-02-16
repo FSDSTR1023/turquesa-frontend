@@ -69,7 +69,7 @@ const PaginaPrincipal = () => {
                  <TarjetaOro/>
     </div> }*/}
     
-<BotonCompra/>
+
 
             </section>
           
