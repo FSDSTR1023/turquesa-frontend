@@ -51,10 +51,10 @@ function SignUpForm() {
   };
 
   return (
-    <div className="form-container sign-up-container">
+    <div className="form-containerLogin sign-up-containerLogin">
       <form onSubmit={handleOnSubmit}>
         <h1>Crea tu cuenta</h1>
-        <div className="socialContainer">
+        <div className="social-ContainerLogin">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
           </a>

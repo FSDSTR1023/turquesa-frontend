@@ -6,6 +6,7 @@ import '../styles/PaginaPrincipal.css';
 import { useTarjeta } from '../components/TarjetaContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
 import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
+import BotonCompra from '../components/BotonCompra.jsx';
 
 
 const PaginaPrincipal = () => {
@@ -55,15 +56,17 @@ const PaginaPrincipal = () => {
                 <h1>Ver modelos</h1>
                 <div className='tarjetasDeMuestra'>
                 {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
                 </div>
                {/*  { <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
     </div> }*/}
     
-
+<BotonCompra/>
 
             </section>
-            <TarjetaOro></TarjetaOro>
+          
         </div>
     );
 }
