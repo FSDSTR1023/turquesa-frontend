@@ -60,7 +60,7 @@ const PaginaPrincipal = () => {
                 <div className='tarjetasDeMuestra'>
 
 
-                    { tarjetas && tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+                    { tarjetas && tarjetas.map((tarjeta, index) => {return (<MuestraTarjeta key={index} tarjeta={tarjeta} />); })}
 
                 </div>
                {/*  { <div className='buttonTarjetaOro'>
