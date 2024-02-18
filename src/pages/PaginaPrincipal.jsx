@@ -4,9 +4,7 @@ import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
 import { useTarjeta } from '../components/TarjetaContexto.jsx';
-import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
 import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
-import BotonCompra from '../components/BotonCompra.jsx';
 import { useUsuario } from '../components/UsuarioContexto.jsx';
 
 

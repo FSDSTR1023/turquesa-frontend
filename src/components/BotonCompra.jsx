@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/BotonCompra.css';
 import {useUsuario} from "../components/UsuarioContexto";
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +9,7 @@ const BotonCompra = () => {
 
   const manejarCompra = ()=> {
     if (authenticated) {
-        // navigate();
+        navigate("/compra");
     } else {
         navigate("/login");
     }

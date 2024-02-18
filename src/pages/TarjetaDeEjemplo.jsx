@@ -1,14 +1,14 @@
-import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import BotonCompra from '../components/BotonCompra';
+import { useTarjeta } from '../components/TarjetaContexto';
 
 const TarjetaDeEjemplo = () => {
-
-   
+    const {tarjeta, compruebaTarjeta} = useTarjeta();
 
     return (
         <div>
-           <TarjetaOro/>
-           <BotonCompra/>
+            {compruebaTarjeta(tarjeta)}
+
+            <BotonCompra/>
         
         </div>
     );

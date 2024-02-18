@@ -1,6 +1,6 @@
 // src/pages/PaginaMisTarjetas.jsx
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import MuestraTarjeta from '../components/MuestraTarjeta';
 import { useTarjeta } from '../components/TarjetaContexto';

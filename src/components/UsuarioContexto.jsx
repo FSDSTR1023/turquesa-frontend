@@ -17,7 +17,9 @@ export const UsuarioProvider = ({children}) => {
     }
 
     const logOut = async () => {
+        console.log("entra logout");
         await logout();
+        console.log("sale logout");
         setUsuario(null);
         setIsAuthenticated(false);
     }

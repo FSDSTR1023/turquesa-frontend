@@ -14,6 +14,9 @@ export const getTarjeta = (id) => axios.get('/tarjeta/' + id);
 // Fetch tarjetas for a specific user by their userID
 export const getTarjetasUsuario = (userId) => axios.get(`/tarjeta/usuario/${userId}`);
 
+
+export const generarTarjetaParaUsuario = (tarjeta, usuarioId) => axios.post(`/tarjeta/usuario/crear`, {tarjeta:tarjeta, usuario:usuarioId});
+
 /* 
 getTarjetasMuestra maps to the / route, which could be for fetching tarjetas meant for showcasing or for general display purposes that are not tied to a specific user.
 getAllTarjetas corresponds to the /all route, likely intended for administrative purposes or scenarios where you need to retrieve all tarjetas stored in the database, regardless of any user association.

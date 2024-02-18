@@ -6,7 +6,9 @@ const Navbar = () => {
     const {logOut} = useUsuario();
 
     const handleLogout = async () => {
+        console.log("hace logout");
         await logOut();
+        console.log("sale del logout");
     }
 
     return (
@@ -24,13 +26,10 @@ const Navbar = () => {
                                 <Link to='/mis-tarjetas'>Mis tarjetas</Link>
                             </li>
                             <li>
-                                Usuario     
-                            </li>
-                            <li>
                                     <Link to='/gestion-invitados'>Gestión de Invitados</Link> {/* Nuevo enlace */}
                             </li>
                             <li>
-                                <p onClick={handleLogout}>Logout</p>
+                                <a onClick={handleLogout}>Logout</a>
                             </li>
                         </>
                     ) : (
