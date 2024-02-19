@@ -5,9 +5,12 @@ import Navbar from '../components/Navbar';
 import MuestraTarjeta from '../components/MuestraTarjeta';
 import { useTarjeta } from '../components/TarjetaContexto';
 import '../styles/PaginaMisTarjetas.css'; // Make sure you have the CSS file imported
+import { useNavigate } from 'react-router-dom';
 
 const PaginaMisTarjetas = () => {
   const { tarjetas, obtenerListaDeTarjetas } = useTarjeta();
+  const {setTarjetaUsuario} = useTarjeta();
+  const navigate = useNavigate();
 
   useEffect(() => {
     obtenerListaDeTarjetas();
@@ -20,6 +23,12 @@ const PaginaMisTarjetas = () => {
   if (!tarjetas.length) {
     return <div>Loading...</div>;
   }
+  
+  const selectTarjeta = (tarjeta) => {
+      console.log("Tarjeta seleccionada: ", tarjeta);
+      setTarjetaUsuario(tarjeta);
+      navigate("/adquirida");
+  }
 
   return (
     <div>
@@ -27,7 +36,7 @@ const PaginaMisTarjetas = () => {
       <h1 className="page-title">Mis Tarjetas</h1>
       <div className="tarjetas-container">
         {tarjetas.map((tarjeta) => (
-          <MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} />
+          <MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>
         ))}
       </div>
     </div>

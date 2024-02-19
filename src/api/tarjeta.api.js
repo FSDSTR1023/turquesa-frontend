@@ -12,7 +12,7 @@ export const getAllTarjetas = () => axios.get('/tarjeta/all');
 export const getTarjeta = (id) => axios.get('/tarjeta/' + id);
 
 // Fetch tarjetas for a specific user by their userID
-export const getTarjetasUsuario = (userId) => axios.get(`/tarjeta/usuario/${userId}`);
+export const getTarjetasUsuario = (userId) => axios.get(`/tarjeta/usuario/all`, {params: {user:userId}});
 
 
 export const generarTarjetaParaUsuario = (tarjeta, usuarioId) => axios.post(`/tarjeta/usuario/crear`, {tarjeta:tarjeta, usuario:usuarioId});

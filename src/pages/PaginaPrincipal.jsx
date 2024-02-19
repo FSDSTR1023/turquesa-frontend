@@ -6,13 +6,16 @@ import '../styles/PaginaPrincipal.css';
 import { useTarjeta } from '../components/TarjetaContexto.jsx';
 import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
 import { useUsuario } from '../components/UsuarioContexto.jsx';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const PaginaPrincipal = () => {
     const { tarjetas } = useTarjeta ();
     const { obtenerListaDeTarjetas } = useTarjeta ();
+    const {setTarjeta} = useTarjeta();
     const {checkIfTheresUserSaved} = useUsuario();
+    const navigate = useNavigate();
     
     useEffect(() => {
         checkIfTheresUserSaved();
@@ -23,6 +26,12 @@ const PaginaPrincipal = () => {
 
  
       }, []);
+      
+    const selectTarjeta = (tarjeta) => {
+        console.log("Tarjeta seleccionada: ", tarjeta);
+        setTarjeta(tarjeta);
+        navigate("/ejemplo");
+    }
 
     return (
         <div>
@@ -60,7 +69,7 @@ const PaginaPrincipal = () => {
                 <div className='tarjetasDeMuestra'>
 
 
-                    { tarjetas && tarjetas.map((tarjeta, index) => {return (<MuestraTarjeta key={index} tarjeta={tarjeta} />); })}
+                    { tarjetas?.map((tarjeta, index) => {return (<MuestraTarjeta key={index} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>); })}
 
                 </div>
                {/*  { <div className='buttonTarjetaOro'>

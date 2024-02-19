@@ -1,6 +1,6 @@
 // src/components/tarjetaContexto.jsx
 import { createContext, useState, useContext } from 'react';
-import { getTarjetas, generarTarjetaParaUsuario } from '../api/tarjeta.api.js';
+import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario } from '../api/tarjeta.api.js';
 import {useUsuario} from '../components/UsuarioContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import TarjetaCobre from '../components/Tarjetas/TarjetaCobre';
@@ -12,6 +12,7 @@ export const TarjetaProvider = ({ children }) => {
     const [tarjetas, setTarjetas] = useState([]);
     const [tarjeta, setTarjeta] = useState (null);
     const [tarjetaUsuario, setTarjetaUsuario] = useState (null);
+    const [tarjetasUsuario, setTarjetasUsuario] = useState ([]);
 
     const obtenerListaDeTarjetas = async () => {
         try {
@@ -19,6 +20,15 @@ export const TarjetaProvider = ({ children }) => {
             setTarjetas(response.data);
         } catch (error) {
             console.error('Error al obtener las tarjetas:', error);
+        }
+    }
+
+    const obtenerListaDeTarjetasDeUsuario = async () => {
+        try {
+            const response = await getTarjetasUsuario(usuario.id);
+            setTarjetasUsuario(response.data);
+        } catch (error) {
+            console.error('Error al obtener las tarjetas del usuario:', error);
         }
     }
 
@@ -39,14 +49,20 @@ export const TarjetaProvider = ({ children }) => {
         setTarjetaUsuario(response.data);
     }
 
+    const actualizarTarjetaUsuario = async (campos) => {
+
+    }
+
 
     return (
         <TarjetaContexto.Provider value={{ 
             tarjetas, 
-            obtenerListaDeTarjetas, 
             setTarjeta, tarjeta, 
             tarjetaUsuario, setTarjetaUsuario, 
-            compruebaTarjeta, compraTarjeta }}>
+            tarjetasUsuario,
+            obtenerListaDeTarjetas, obtenerListaDeTarjetasDeUsuario,
+            compruebaTarjeta, compraTarjeta,
+            actualizarTarjetaUsuario }}>
             {children}
         </TarjetaContexto.Provider>
     );
