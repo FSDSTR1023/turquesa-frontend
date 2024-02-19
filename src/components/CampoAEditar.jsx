@@ -1,14 +1,14 @@
-/* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
 import '../styles/CampoAEditar.css';
 
 const CampoAEditar = (props) => {
+    console.log("Props a editar: ", props);
     const campo = props.campo;
+    const index = props.index;
     console.log(campo);
     return (
-        <div className="campoAEditar">
-            <h3 className="campoAEditarTitulo">{campo.titulo}</h3>
-            <input type="text" value={campo.valor}></input>
+        <div>
+            <label htmlFor={"campoAEditar-"+campo[0]+index}>{campo[0]}</label>
+            <input id={"campoAEditar-"+campo[0]+index} type="text" value={campo[1]}></input>
         </div>
     );
 }

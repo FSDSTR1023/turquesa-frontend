@@ -21,10 +21,8 @@ function SignUpForm() {
     evt.preventDefault();
 
     const { name, email, password } = state;
-    alert(
-      `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
 
+    
     for (const key in state) {
       setState({
         ...state,
@@ -51,10 +49,10 @@ function SignUpForm() {
   };
 
   return (
-    <div className="form-container sign-up-container">
+    <div className="form-containerLogin sign-up-containerLogin">
       <form onSubmit={handleOnSubmit}>
         <h1>Crea tu cuenta</h1>
-        <div className="socialContainer">
+        <div className="social-ContainerLogin">
           <a href="#" className="social">
             <i className="fab fa-facebook-f" />
           </a>

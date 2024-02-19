@@ -4,21 +4,34 @@ import Navbar from "../components/Navbar.jsx";
 import ContenidoScreenDos from '../components/ContenidoScreenDos.jsx';
 import '../styles/PaginaPrincipal.css';
 import { useTarjeta } from '../components/TarjetaContexto.jsx';
-import TarjetaOro from '../components/Tarjetas/TarjetaOro.jsx';
 import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
+import { useUsuario } from '../components/UsuarioContexto.jsx';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const PaginaPrincipal = () => {
-   const { tarjetas } = useTarjeta ();
-   const { obtenerListaDeTarjetas } = useTarjeta ();
-
+    const { tarjetas } = useTarjeta ();
+    const { obtenerListaDeTarjetas } = useTarjeta ();
+    const {setTarjeta} = useTarjeta();
+    const {checkIfTheresUserSaved} = useUsuario();
+    const navigate = useNavigate();
     
+    useEffect(() => {
+        checkIfTheresUserSaved();
+    });
 
     useEffect(() => { 
         obtenerListaDeTarjetas ()
 
  
       }, []);
+      
+    const selectTarjeta = (tarjeta) => {
+        console.log("Tarjeta seleccionada: ", tarjeta);
+        setTarjeta(tarjeta);
+        navigate("/ejemplo");
+    }
 
     return (
         <div>
@@ -54,7 +67,10 @@ const PaginaPrincipal = () => {
             <section className='screenTres'> {/*Lista de tarjetas*/}
                 <h1>Ver modelos</h1>
                 <div className='tarjetasDeMuestra'>
-                {tarjetas.map((tarjeta) => {return (<MuestraTarjeta tarjeta={tarjeta} />); })}
+
+
+                    { tarjetas?.map((tarjeta, index) => {return (<MuestraTarjeta key={index} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>); })}
+
                 </div>
                {/*  { <div className='buttonTarjetaOro'>
                  <TarjetaOro/>
@@ -63,7 +79,7 @@ const PaginaPrincipal = () => {
 
 
             </section>
-            <TarjetaOro></TarjetaOro>
+          
         </div>
     );
 }

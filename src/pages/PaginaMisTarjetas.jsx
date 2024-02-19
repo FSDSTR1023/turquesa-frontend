@@ -1,4 +1,5 @@
 // src/pages/PaginaMisTarjetas.jsx
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import MuestraTarjeta from '../components/MuestraTarjeta';
@@ -11,6 +12,20 @@ const PaginaMisTarjetas = () => {
   const { usuario } = useUsuario();
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState('');
+=======
+
+import { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import MuestraTarjeta from '../components/MuestraTarjeta';
+import { useTarjeta } from '../components/TarjetaContexto';
+import '../styles/PaginaMisTarjetas.css'; // Make sure you have the CSS file imported
+import { useNavigate } from 'react-router-dom';
+
+const PaginaMisTarjetas = () => {
+  const { tarjetas, obtenerListaDeTarjetas } = useTarjeta();
+  const {setTarjetaUsuario} = useTarjeta();
+  const navigate = useNavigate();
+>>>>>>> main
 
   useEffect(() => {
     if (usuario && usuario.id) {
@@ -30,6 +45,12 @@ const PaginaMisTarjetas = () => {
   if (cargando) {
     return <div>Loading...</div>;
   }
+  
+  const selectTarjeta = (tarjeta) => {
+      console.log("Tarjeta seleccionada: ", tarjeta);
+      setTarjetaUsuario(tarjeta);
+      navigate("/adquirida");
+  }
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -45,7 +66,7 @@ const PaginaMisTarjetas = () => {
       <h1 className="page-title">Mis Tarjetas</h1>
       <div className="tarjetas-container">
         {tarjetas.map((tarjeta) => (
-          <MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} />
+          <MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>
         ))}
       </div>
     </div>
