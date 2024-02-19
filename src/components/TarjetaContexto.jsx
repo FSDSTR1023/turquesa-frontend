@@ -1,41 +1,19 @@
-<<<<<<< HEAD
-// src/components/TarjetaContexto.jsx
-import React, { createContext, useState, useContext } from 'react';
-import { getTarjetasUsuario, getTarjetas } from '../api/tarjeta.api.js'; // Asegúrate de importar getTarjetas
-=======
 // src/components/tarjetaContexto.jsx
 import { createContext, useState, useContext } from 'react';
 import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta } from '../api/tarjeta.api.js';
 import {useUsuario} from '../components/UsuarioContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import TarjetaCobre from '../components/Tarjetas/TarjetaCobre';
->>>>>>> main
 
 const TarjetaContexto = createContext();
 
 export const TarjetaProvider = ({ children }) => {
     const {usuario} = useUsuario();
     const [tarjetas, setTarjetas] = useState([]);
-<<<<<<< HEAD
-    
-    // Función para obtener tarjetas asociadas a un usuario específico
-    const obtenerTarjetasDelUsuario = async (userId) => {
-        try {
-            const response = await getTarjetasUsuario(userId);
-            setTarjetas(response.data);
-        } catch (error) {
-            console.error('Error al obtener las tarjetas del usuario:', error);
-            // Considera manejar el error de manera que no interrumpa la aplicación
-        }
-    };
-
-    // Función para obtener una lista general de todas las tarjetas disponibles
-=======
     const [tarjeta, setTarjeta] = useState (null);
     const [tarjetaUsuario, setTarjetaUsuario] = useState (null);
     const [tarjetasUsuario, setTarjetasUsuario] = useState ([]);
 
->>>>>>> main
     const obtenerListaDeTarjetas = async () => {
         try {
             const response = await getTarjetas();
@@ -44,12 +22,6 @@ export const TarjetaProvider = ({ children }) => {
             console.error('Error al obtener todas las tarjetas:', error);
             // Considera manejar el error de manera que no interrumpa la aplicación
         }
-<<<<<<< HEAD
-    };
-
-    return (
-        <TarjetaContexto.Provider value={{ tarjetas, obtenerTarjetasDelUsuario, obtenerListaDeTarjetas }}>
-=======
     }
 
     const obtenerListaDeTarjetasDeUsuario = async () => {
@@ -95,7 +67,6 @@ export const TarjetaProvider = ({ children }) => {
             obtenerListaDeTarjetas, obtenerListaDeTarjetasDeUsuario,
             compruebaTarjeta, compraTarjeta,
             actualizarTarjetaUsuario }}>
->>>>>>> main
             {children}
         </TarjetaContexto.Provider>
     );
