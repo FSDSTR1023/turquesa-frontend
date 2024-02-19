@@ -1,19 +1,4 @@
 // src/pages/PaginaMisTarjetas.jsx
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
-import MuestraTarjeta from '../components/MuestraTarjeta';
-import { useTarjeta } from '../components/TarjetaContexto';
-import { useUsuario } from '../components/UsuarioContexto';
-import '../styles/PaginaMisTarjetas.css';
-
-const PaginaMisTarjetas = () => {
-  const { tarjetas, obtenerTarjetasDelUsuario } = useTarjeta();
-  const { usuario } = useUsuario();
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState('');
-=======
-
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import MuestraTarjeta from '../components/MuestraTarjeta';
@@ -25,7 +10,7 @@ const PaginaMisTarjetas = () => {
   const { tarjetas, obtenerListaDeTarjetas } = useTarjeta();
   const {setTarjetaUsuario} = useTarjeta();
   const navigate = useNavigate();
->>>>>>> main
+
 
   useEffect(() => {
     if (usuario && usuario.id) {
