@@ -1,6 +1,6 @@
 // src/components/tarjetaContexto.jsx
 import { createContext, useState, useContext } from 'react';
-import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario } from '../api/tarjeta.api.js';
+import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta } from '../api/tarjeta.api.js';
 import {useUsuario} from '../components/UsuarioContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import TarjetaCobre from '../components/Tarjetas/TarjetaCobre';
@@ -50,7 +50,10 @@ export const TarjetaProvider = ({ children }) => {
     }
 
     const actualizarTarjetaUsuario = async (campos) => {
-
+        campos.map((campo) => {
+            tarjetaUsuario.datos_personalizados[campo.nombre]=campo.valor;
+        });
+        await updateTarjeta(tarjetaUsuario);
     }
 
 
