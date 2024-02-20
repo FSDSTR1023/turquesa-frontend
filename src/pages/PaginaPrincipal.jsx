@@ -22,7 +22,7 @@ const PaginaPrincipal = () => {
     });
 
     useEffect(() => { 
-        obtenerListaDeTarjetas ()
+        obtenerListaDeTarjetas();
 
  
       }, []);
