@@ -1,6 +1,8 @@
 /* ListaDeInvitadosEnviados.css */
 
 .sent-invites-container {
+    overflow:scroll;
+    height: 500px;
     width: 75%; /* Responsive width for adaptive design */
     margin: 40px auto; /* Centering the container with vertical spacing */
     background: #FFFFFF; /* Consistent white background */
