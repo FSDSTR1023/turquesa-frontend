@@ -1,48 +1,76 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-* {
+
+/** {
   box-sizing: border-box;
 }
 
+/*body {
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 
-
+  margin: -20px 0 50px;
+}*/
 .VentanaBody{
-  background-color: rgb(255, 255, 255);
+  background-color: #f6f5f7;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
   box-sizing: border-box;
+  
+
 }
 .VentanaBody h1 {
   font-weight: bold;
   margin: 0;
+  box-sizing: border-box;
 }
+
+
+
 .VentanaBody h2 {
   text-align: center;
+  box-sizing: border-box;
+
 }
+
+
+
 .VentanaBody p {
   font-size: 14px;
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
+  box-sizing: border-box;
 }
+
+
 /*span {
   font-size: 12px;
 }*/
+
+
 .VentanaBody a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
 }
+
+
 .VentanaBody button {
   border-radius: 20px;
-  border: 1px solid #FF4B2B;
-  background-color: #FF4B2B;
-  color: #FFFFFF;
+  border: 1px solid rgba(50,37,151,1);
+  background-color: rgba(50,37,151,1);
+  color: #ffffff;
+
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -50,18 +78,26 @@
   text-transform: uppercase;
   transition: transform 80ms ease-in;
 }
+
+
 .VentanaBody button:active {
   transform: scale(0.95);
 }
+
 .VentanaBody button:focus {
   outline: none;
 }
+
+
 .VentanaBody button.ghost {
   background-color: transparent;
   border-color: #FFFFFF;
 }
+
+
 .VentanaBody form {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +106,8 @@
   height: 100%;
   text-align: center;
 }
+
+
 .VentanaBody input {
   background-color: #eee;
   border: none;
@@ -77,6 +115,9 @@
   margin: 8px 0;
   width: 100%;
 }
+
+
+
 .containerLogin {
   background-color: #fff;
   border-radius: 10px;
@@ -87,26 +128,32 @@
   max-width: 100%;
   min-height: 480px;
 }
+
 .form-containerLogin {
   position: absolute;
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
 }
+
+
 .sign-in-containerLogin {
   left: 0;
   width: 50%;
   z-index: 2;
 }
+
 .containerLogin.right-panel-active .sign-in-containerLogin {
   transform: translateX(100%);
 }
+
 .sign-up-containerLogin {
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
 }
+
 .containerLogin.right-panel-active .sign-up-containerLogin {
   transform: translateX(100%);
   opacity: 1;
@@ -125,6 +172,7 @@
     z-index: 5;
   }
 }
+
 .overlayLogin-containerLogin {
   position: absolute;
   top: 0;
@@ -134,14 +182,18 @@
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
   z-index: 100;
+ 
+  
 }
+
 .containerLogin.right-panel-active .overlayLogin-containerLogin {
   transform: translateX(-100%);
 }
+
 .overlayLogin {
-  background: #FF416C;
-  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  background:rgba(50,37,151,1);
+  background: -webkit-linear-gradient(to right, rgba(50,37,151,1), #5143b9);
+  background: linear-gradient(to right, rgba(50,37,151,1), #5143b9);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -152,10 +204,14 @@
   width: 200%;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
+  box-sizing: border-box;
 }
+
+
 .containerLogin.right-panel-active .overlayLogin {
   transform: translateX(50%);
 }
+
 .overlayLogin-panel {
   position: absolute;
   display: flex;
@@ -166,28 +222,35 @@
   text-align: center;
   top: 0;
   height: 100%;
-  width: 50%;
+  width: 40%;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
+
 .overlayLogin-left {
   transform: translateX(-20%);
 }
+
 .containerLogin.right-panel-active .overlayLogin-left {
   transform: translateX(0);
 }
+
+
 .overlayLogin-right {
   right: 0;
   transform: translateX(0);
 }
+
 .containerLogin.right-panel-active .overlayLogin-right {
   transform: translateX(20%);
 }
+
 .social-containerLogin {
   margin: 20px 0;
 }
+
 .social-containerLogin a {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
@@ -196,7 +259,8 @@
   height: 40px;
   width: 40px;
 }
-.footerlogin {
+
+.footerLogin {
   background-color: #222;
   color: #fff;
   font-size: 14px;
@@ -207,13 +271,16 @@
   text-align: center;
   z-index: 999;
 }
-.footerlogin p {
+
+.footerLogin p {
   margin: 10px 0;
 }
-.footerlogin i {
+
+.footerLogin i {
   color: red;
 }
-.footerlogin a {
-  color: #3C97BF;
+
+.footerLogin a {
+  color: #3c97bf;
   text-decoration: none;
 }

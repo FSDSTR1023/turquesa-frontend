@@ -1,14 +1,22 @@
-/* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import '../styles/CampoAEditar.css';
 
 const CampoAEditar = (props) => {
-    const campo = props.campo;
+    console.log("Props a editar: ", props);
+    var campo = props.campo;
+    const index = props.index;
+    const campos = props.campos;
+    const valorActual = useRef();
     console.log(campo);
+
+    const updateValue = () => {
+        campos[index].valor=valorActual.current.value;
+    }
+
     return (
-        <div className="campoAEditar">
-            <h3 className="campoAEditarTitulo">{campo.titulo}</h3>
-            <input type="text" value={campo.valor}></input>
+        <div>
+            <label htmlFor={"campoAEditar-"+campo[0]+index}>{campo[0]}</label>
+            <input ref={valorActual} onChange={updateValue} id={"campoAEditar-"+campo[0]+index} type="text" placeholder={campo[1]}></input>
         </div>
     );
 }

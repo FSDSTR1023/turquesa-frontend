@@ -4,12 +4,17 @@ import SignInForm from "../components/SignIn";
 import SignUpForm from "../components/SignUp";
 const VentanaLogin = () => {
   const [type, setType] = useState("signIn");
+
   const handleOnClick = (text) => {
     if (text !== type) {
       setType(text);
     }
   };
+
+
   const containerClass = "containerLogin " + (type === "signUp" ? "right-panel-active" : "");
+
+
   return (
     <div className="VentanaBody">
       <h2>Sign in/up</h2>
@@ -49,4 +54,6 @@ const VentanaLogin = () => {
     </div>
   );
 };
+
+
 export default VentanaLogin;
