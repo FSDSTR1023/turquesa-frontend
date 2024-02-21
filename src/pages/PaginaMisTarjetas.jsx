@@ -31,15 +31,21 @@ const PaginaMisTarjetas = () => {
   }
 
   return (
-    <div>
+    <>
+    <div className='mis-tarjetas-page-container'>
       <Navbar />
-      <h1 className="page-title">Mis Tarjetas</h1>
+      <div className='mis-tarjetas-container-intro'>
+      <h1 className="mis-tarjetas-title">Mis Tarjetas</h1>
+      <div className='imagen-mis-tarjetas-title'></div>
+      </div>
       <div className="tarjetas-container">
-        {tarjetas.map((tarjeta) => (
+      {tarjetas.map((tarjeta) => (
           <MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>
         ))}
+    
       </div>
     </div>
+    </>
   );
 };
 

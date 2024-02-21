@@ -1,10 +1,11 @@
 .computer-container {
     position: relative;
     display: inline-block; /* Permite que el contenedor se ajuste al tamaño de la imagen */
- 
+    margin-bottom: 40px;
     width: 1060px; /* Ancho del contenedor */
     height:560px; /* Altura del contenedor */
-  overflow: hidden;
+    overflow: hidden;
+
 
   
   }
@@ -15,8 +16,9 @@
     height: auto;
     /*max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
     z-index: 1; /* Asegura que el contenido de la pantalla esté delante de la imagen del ordenador */
-    top:-12px;
+    top:-13px;
     overflow:visible;
+  
 
     
    
@@ -25,14 +27,15 @@
   
   .screen-computer {
     position: absolute;
-    top: 25px;
+    top: 15px;
     left: 137px;
-    width: 780px; /* Ajusta el ancho del contenido de la pantalla */
+    width: 765px; /* Ajusta el ancho del contenido de la pantalla */
     height: 500px; /* Permite que la altura se ajuste automáticamente según el ancho */
     overflow:hidden;
     opacity: 1; /* Inicialmente oculta */
     transition: transform 15s ease;
-    
+ 
+   margin-left: 1%;
     border-radius: 20px;
    
   
@@ -58,4 +61,7 @@
   }
   .computer-container:not(:hover) .screen-computer {
     transform: translateY(0); /* Retorna a su posición original */
+    height: auto;
+    overflow-y: auto;
+
   }
