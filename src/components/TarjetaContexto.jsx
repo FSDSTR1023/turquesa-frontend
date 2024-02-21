@@ -25,9 +25,7 @@ export const TarjetaProvider = ({ children }) => {
 
     const obtenerListaDeTarjetasDeUsuario = async () => {
         try {
-            console.log("Aqui llega y");
             const response = await getTarjetasUsuario(usuario.id);
-            console.log("de aqui no sale");
             setTarjetasUsuario(response.data);
         } catch (error) {
             console.error('Error al obtener las tarjetas del usuario:', error);

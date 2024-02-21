@@ -29,7 +29,7 @@ const PaginaMisTarjetas = () => {
       <Navbar />
       <h1 className="page-title">Mis Tarjetas</h1>
       <div className="tarjetas-container">
-        {tarjetasUsuario?.map((tarjeta) => {
+        {tarjetasUsuario && tarjetasUsuario?.map((tarjeta) => {
             return (<MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>);
           })
         }
