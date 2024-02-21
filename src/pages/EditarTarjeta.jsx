@@ -37,7 +37,7 @@ const EditarTarjeta = () => {
             <div className="ventanaEditarTarjeta">
                 {
                     Object.entries(tarjetaUsuario.datos_personalizados).map((value, index)=> {
-                        return(<CampoAEditar key={index} campo={value} index={index} />)
+                        return(<CampoAEditar key={index} campo={value} index={index} campos={campos}/>)
                     })
                 }
                 {/* {campos.map((campo, index)=>{if(index<campos.length-1){return(<CampoAEditar key={index} campo={campo} index={index} />)}})} */}

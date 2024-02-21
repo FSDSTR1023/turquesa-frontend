@@ -9,8 +9,8 @@ const TarjetaContexto = createContext();
 
 export const TarjetaProvider = ({ children }) => {
     const {usuario} = useUsuario();
-    const [tarjetas, setTarjetas] = useState([]);
     const [tarjeta, setTarjeta] = useState (null);
+    const [tarjetas, setTarjetas] = useState([]);
     const [tarjetaUsuario, setTarjetaUsuario] = useState (null);
     const [tarjetasUsuario, setTarjetasUsuario] = useState ([]);
 
@@ -44,9 +44,7 @@ export const TarjetaProvider = ({ children }) => {
     }; 
 
     const compraTarjeta = async() => {
-        console.log("Llega a la compra");
         const response = await generarTarjetaParaUsuario(tarjeta, usuario.id);
-        console.log("Pasa la compra");
         setTarjetaUsuario(response.data);
     }
 
@@ -54,6 +52,7 @@ export const TarjetaProvider = ({ children }) => {
         campos.map((campo) => {
             tarjetaUsuario.datos_personalizados[campo.nombre]=campo.valor;
         });
+        console.log("Datos a actualizar: ", tarjetaUsuario);
         await updateTarjeta(tarjetaUsuario);
     }
 
