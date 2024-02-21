@@ -19,7 +19,8 @@ export const TarjetaProvider = ({ children }) => {
             const response = await getTarjetas();
             setTarjetas(response.data);
         } catch (error) {
-            console.error('Error al obtener las tarjetas:', error);
+            console.error('Error al obtener todas las tarjetas:', error);
+            // Considera manejar el error de manera que no interrumpa la aplicación
         }
     }
 
@@ -68,10 +69,12 @@ export const TarjetaProvider = ({ children }) => {
             {children}
         </TarjetaContexto.Provider>
     );
-}
+};
+
 export const useTarjeta = () => {
     const context = useContext(TarjetaContexto);
-    if (!context)
+    if (!context) {
         throw new Error('useTarjeta debe usarse dentro de un TarjetaProvider');
+    }
     return context;
-}
+};

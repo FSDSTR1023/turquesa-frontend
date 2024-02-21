@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {useUsuario} from "./UsuarioContexto";
+import { useUsuario } from "./UsuarioContexto";
 
 const Navbar = () => {
     const {authenticated} = useUsuario();
@@ -48,6 +48,6 @@ const Navbar = () => {
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;

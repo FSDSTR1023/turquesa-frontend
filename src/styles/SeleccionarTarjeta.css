@@ -1,0 +1,30 @@
+/* SeleccionarTarjeta.css */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo de la columna aquí */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px; /* Espaciado alrededor del grid */
+}
+
+.tarjeta {
+    border: 1px solid #ccc; /* Bordes opcionales para cada tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el contenido no desborde */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para profundidad */
+    transition: transform 0.2s; /* Animación al pasar el mouse */
+}
+
+.tarjeta:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+.tarjeta img {
+    width: 100%; /* Asegura que las imágenes cubran el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.tarjeta .muestraTarjetaNombre {
+    text-align: center;
+    padding: 10px;
+}

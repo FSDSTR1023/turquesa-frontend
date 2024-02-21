@@ -1,5 +1,4 @@
 // src/pages/PaginaMisTarjetas.jsx
-
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import MuestraTarjeta from '../components/MuestraTarjeta';
@@ -13,16 +12,19 @@ const PaginaMisTarjetas = () => {
   const {setTarjetaUsuario} = useTarjeta();
   const navigate = useNavigate();
 
+
   useEffect(() => {
-    obtenerListaDeTarjetasDeUsuario();
+        obtenerListaDeTarjetasDeUsuario();
     
   }, []);
+
   
   const selectTarjeta = (tarjeta) => {
       console.log("Tarjeta seleccionada: ", tarjeta);
       setTarjetaUsuario(tarjeta);
       navigate("/adquirida");
   }
+
 
   return (
     <div>

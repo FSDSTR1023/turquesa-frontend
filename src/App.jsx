@@ -1,4 +1,7 @@
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UsuarioProvider } from './components/UsuarioContexto';
+import { TarjetaProvider } from './components/TarjetaContexto'; // Importa TarjetaProvider
 import PaginaPrincipal from './pages/PaginaPrincipal';
 import EditarTarjeta from './pages/EditarTarjeta';
 import TarjetaDeEjemplo from './pages/TarjetaDeEjemplo';
@@ -10,7 +13,6 @@ import VentanaCompra from './pages/VentanaCompra';
 
 
 function App() {
-
   return (
     <Router>
         
@@ -29,4 +31,5 @@ function App() {
   )
 }
 
-export default App
+export default App;
+
