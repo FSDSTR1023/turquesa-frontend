@@ -36,10 +36,14 @@ const PaginaMisTarjetas = () => {
       </div>
       <div className="tarjetas-container">
 
+
+
         {tarjetasUsuario && tarjetasUsuario?.map((tarjeta) => {
             return (<MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>);
           })
         }
+
+
 
       </div>
     </div>
