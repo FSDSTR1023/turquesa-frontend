@@ -18,11 +18,11 @@ const PaginaPrincipal = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        checkIfTheresUserSaved();
+        // checkIfTheresUserSaved();
     });
 
     useEffect(() => { 
-        obtenerListaDeTarjetas ()
+        obtenerListaDeTarjetas();
 
  
       }, []);
@@ -83,5 +83,6 @@ const PaginaPrincipal = () => {
         </div>
     );
 }
+
 
 export default PaginaPrincipal;

@@ -1,5 +1,4 @@
 // src/pages/PaginaMisTarjetas.jsx
-
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import MuestraTarjeta from '../components/MuestraTarjeta';
@@ -8,27 +7,24 @@ import '../styles/PaginaMisTarjetas.css'; // Make sure you have the CSS file imp
 import { useNavigate } from 'react-router-dom';
 
 const PaginaMisTarjetas = () => {
-  const { tarjetas, obtenerListaDeTarjetas } = useTarjeta();
+  const { tarjetasUsuario } = useTarjeta();
+  const {obtenerListaDeTarjetasDeUsuario} = useTarjeta();
   const {setTarjetaUsuario} = useTarjeta();
   const navigate = useNavigate();
 
+
   useEffect(() => {
-    obtenerListaDeTarjetas();
+        obtenerListaDeTarjetasDeUsuario();
     
-  }, [obtenerListaDeTarjetas]);
+  }, []);
 
-  console.log(tarjetas);
-
-  // If tarjetas are not yet loaded, show a loading message or spinner
-  if (!tarjetas.length) {
-    return <div>Loading...</div>;
-  }
   
   const selectTarjeta = (tarjeta) => {
       console.log("Tarjeta seleccionada: ", tarjeta);
       setTarjetaUsuario(tarjeta);
       navigate("/adquirida");
   }
+
 
   return (
     <>
@@ -39,10 +35,12 @@ const PaginaMisTarjetas = () => {
       <div className='imagen-mis-tarjetas-title'></div>
       </div>
       <div className="tarjetas-container">
-      {tarjetas.map((tarjeta) => (
-          <MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>
-        ))}
-    
+
+        {tarjetasUsuario && tarjetasUsuario?.map((tarjeta) => {
+            return (<MuestraTarjeta key={tarjeta._id} tarjeta={tarjeta} selectTarjeta={selectTarjeta}/>);
+          })
+        }
+
       </div>
     </div>
     </>

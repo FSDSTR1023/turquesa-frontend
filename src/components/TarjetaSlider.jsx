@@ -1,11 +1,10 @@
-import React from 'react';
-import '../styles/TarjetaSlider.css';
+import '../styles/tarjetaSlider.css';
 
 
 const TarjetaSlider = (prop) => {
     const caracteristica= prop.caracteristica;
 
-    console.log('caracteristica', caracteristica);
+    // console.log('caracteristica', caracteristica);
   return (
     <div className='tarjetaSlider'>
       <div className='tarjetaLogo'><img src= {caracteristica.logo} alt='logo '/></div>

@@ -9,8 +9,8 @@ const TarjetaContexto = createContext();
 
 export const TarjetaProvider = ({ children }) => {
     const {usuario} = useUsuario();
-    const [tarjetas, setTarjetas] = useState([]);
     const [tarjeta, setTarjeta] = useState (null);
+    const [tarjetas, setTarjetas] = useState([]);
     const [tarjetaUsuario, setTarjetaUsuario] = useState (null);
     const [tarjetasUsuario, setTarjetasUsuario] = useState ([]);
 
@@ -19,7 +19,8 @@ export const TarjetaProvider = ({ children }) => {
             const response = await getTarjetas();
             setTarjetas(response.data);
         } catch (error) {
-            console.error('Error al obtener las tarjetas:', error);
+            console.error('Error al obtener todas las tarjetas:', error);
+            // Considera manejar el error de manera que no interrumpa la aplicación
         }
     }
 
@@ -43,9 +44,7 @@ export const TarjetaProvider = ({ children }) => {
     }; 
 
     const compraTarjeta = async() => {
-        console.log("Llega a la compra");
         const response = await generarTarjetaParaUsuario(tarjeta, usuario.id);
-        console.log("Pasa la compra");
         setTarjetaUsuario(response.data);
     }
 
@@ -53,6 +52,7 @@ export const TarjetaProvider = ({ children }) => {
         campos.map((campo) => {
             tarjetaUsuario.datos_personalizados[campo.nombre]=campo.valor;
         });
+        console.log("Datos a actualizar: ", tarjetaUsuario);
         await updateTarjeta(tarjetaUsuario);
     }
 
@@ -69,10 +69,12 @@ export const TarjetaProvider = ({ children }) => {
             {children}
         </TarjetaContexto.Provider>
     );
-}
+};
+
 export const useTarjeta = () => {
     const context = useContext(TarjetaContexto);
-    if (!context)
+    if (!context) {
         throw new Error('useTarjeta debe usarse dentro de un TarjetaProvider');
+    }
     return context;
-}
+};
