@@ -7,15 +7,83 @@
   /* width: 500px; Remover o comentar esta línea */
   height: 300px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+
+
+}
+.muestraTarjetaContenedor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 1; /* Ajusta el z-index según sea necesario */
+}
+.muestraTarjetaContenedor:hover::before {
+  display: none;
+}
+.muestraTarjetaContenedor img{
+
+    width: 500px;
+    height: 300px;
+    left: 0;
+
+
+}
+.muestraTarjetaNombre {
+  position: absolute;
+  width: 500px;
+
+  top: 120px;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+
+}
+.muestraTarjetaBotonVerTarjeta {
+  position: absolute;
+  width: 500px;
+
+  top: 180px;
+  text-align: center;
+ /* opacity: 0;*/
+  transition: opacity .35s ease;
+background-color: rgba(240, 248, 255, 0.541);
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.muestraTarjetaContenedor:hover img {
+  background-color: rgba(0, 0, 0, 0.233);
+  opacity: 1;
+ 
 }
 
+.muestraTarjetaContenedor:hover .muestraTarjetaNombre {
+  top: 90px;
+}
 
-.muestraTarjetaNombre, .muestraTarjetaBotonVerTarjeta {
+.muestraTarjetaContenedor:hover .muestraTarjetaBotonVerTarjeta {
+  opacity: 1;
+}
+
+/*.muestraTarjetaNombre .muestraTarjetaBotonVerTarjeta {
   position: absolute;
   width: 100%; /* Asegúrate de que se adapte al contenedor padre */
-  left: 0;
+ /* left: 0;
   text-align: center;
   z-index: 1;
 }
@@ -28,6 +96,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0);
     transition: background 0.5s ease;
+
   }
   
   .muestraTarjetaContenedor:hover .muestraTarjetaOverlay {
@@ -58,6 +127,7 @@
   
   .muestraTarjetaContenedor:hover .muestraTarjetaNombre {
     top: 90px;
+
   }
   
   .muestraTarjetaBotonVerTarjeta {
@@ -81,4 +151,5 @@
   
   .muestraTarjetaContenedor:hover .muestraTarjetaBotonVerTarjeta {
     opacity: 1;
-  }
+ 
+  }*/
