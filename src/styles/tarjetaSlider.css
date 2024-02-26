@@ -21,10 +21,12 @@
     display: flex;
     align-items: center;
     justify-content:center;
-    width: 62px;
-    height: 62px;
+    width: 66px;
+    height: 66px;
     overflow: hidden;
     box-sizing: border-box;
+    background-color:rgba(249,215,206,1);
+    border-radius: 6px; 
   
 
 
@@ -33,9 +35,9 @@
 
     top: 0px;
   
-    width:100%;
+    width:60px;
     object-fit: cover;
-    background-color:rgba(249,215,206,1);
+    
     border-radius: 6px; 
   
     
