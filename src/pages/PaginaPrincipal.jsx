@@ -7,6 +7,7 @@ import { useTarjeta } from '../components/TarjetaContexto.jsx';
 import EjemploDispositivo from '../components/EjemploDispositivo.jsx';
 import { useUsuario } from '../components/UsuarioContexto.jsx';
 import { useNavigate } from 'react-router-dom';
+import ScreenCuatro from '../components/ScreenCuatro.jsx';
 
 
 
@@ -78,6 +79,9 @@ const PaginaPrincipal = () => {
     
 
 
+            </section>
+            <section>
+                <ScreenCuatro/>
             </section>
           
         </div>
