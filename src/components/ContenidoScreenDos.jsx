@@ -27,12 +27,11 @@ console.log("caracteristicas", caracteristicas)
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      
-    
-     
-    {caracteristicas.map((caracteristica)=>{return(<SwiperSlide><TarjetaSlider caracteristica={caracteristica}/></SwiperSlide> )})}
-
-    
+     {caracteristicas.map((caracteristica, index) => (
+            <SwiperSlide key={index}>
+              <TarjetaSlider caracteristica={caracteristica}/>
+            </SwiperSlide>
+          ))}
       </Swiper>
       </div>
 

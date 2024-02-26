@@ -1,9 +1,10 @@
 .screen4Body{
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: -30px;
+
    
 }
 .screen4Body h1{
@@ -27,9 +28,7 @@
 
 }
 .contenedor-pasos-seguir{
-    display: flex;
-    margin: 20px;
-  
+    display: flex; 
     flex-direction: row;
     align-items: center;
     justify-content:space-around;
