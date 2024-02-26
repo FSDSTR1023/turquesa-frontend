@@ -10,7 +10,7 @@ const ScreenCuatro = () => {
     <div>
         <div className='contenedor-pasos-seguir'>
           <div className='mini-contenedor-pasos-seguir'>
-          <img src='https://raw.githubusercontent.com/FSDSTR1023/turquesa-imagenes/master/img/cheque.png' alt='imagen de check'/>
+          <img src='https://raw.githubusercontent.com/FSDSTR1023/turquesa-imagenes/master/img/Envelope-cuate.png' alt='imagen invitacion'/>
           <p className='pasos-numeros'>1</p>
           <p className='pasos-numero-texto'>Elige</p>
           <p className='pasos-numero-texto-2'>El modelo de invitación que más te guste</p>
@@ -18,6 +18,7 @@ const ScreenCuatro = () => {
           <div className='mini-contenedor-pasos-seguir'>
           <img src='https://raw.githubusercontent.com/FSDSTR1023/turquesa-imagenes/master/img/Forms-cuate.png' alt='imagen rellenar formulario'/>
           <p className='pasos-numeros'>2</p>
+          <hr className='linea-puntos'/>
           <p className='pasos-numero-texto'>Rellena</p>
           <p className='pasos-numero-texto-2'>El formulario con tus datos</p>
           </div>     
