@@ -4,7 +4,7 @@ import '../styles/ListaDeInvitados.css';
 function ListaDeInvitados({ guests, onRemoveGuest, onSendInvitations }) {
   return (
     <div className="lista-invitados-container">
-      {/* Title for the list of guests */}
+     
       <h2 className="lista-invitados-title">Lista de Invitaciones no enviadas</h2>
       
       {guests.map((guest) => (
