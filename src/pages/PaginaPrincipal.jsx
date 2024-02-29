@@ -51,7 +51,7 @@ const PaginaPrincipal = () => {
 
                             </div>
                         </div>
-                        {/* <div className='imagenMuestra'><EjemploDispositivo/></div> */}
+                        <div className='imagenMuestra'><EjemploDispositivo/></div>
                         
                     </div>
 
