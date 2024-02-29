@@ -11,8 +11,8 @@ export const UsuarioProvider = ({children}) => {
         console.log('User: ',user);
         const response = await login(user);
         console.log('Response: ', response);
-        setUsuario({id:response.data._id, email:response.data.email});
-        setIsAuthenticated(true);
+        // setUsuario({id:response.data._id, email:response.data.email});
+        // setIsAuthenticated(true);
         return response.data;
     }
 
@@ -34,11 +34,15 @@ export const UsuarioProvider = ({children}) => {
     }
 
     const checkIfTheresUserSaved = async () => {
+        console.log("Comprueba la cookie");
         const response = await checkUser();
-        if(response.data)
-            setUsuario({id:response.data._id, email:response.data.email});
+        console.log("Respuesta de la cookie: ", response.data.usuarioRecuperado);
+        if(response.data.usuarioRecuperado){
+            setUsuario({id:response.data.usuarioRecuperado._id, email:response.data.usuarioRecuperado.email});
+            setIsAuthenticated(true);
+        }
     }
-
+    
     return (
         <UsuarioContexto.Provider value={{usuario, authenticated, logIn, logOut, register, checkIfTheresUserSaved}}>
             {children}

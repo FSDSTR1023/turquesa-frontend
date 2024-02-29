@@ -18,8 +18,8 @@ const PaginaPrincipal = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        // checkIfTheresUserSaved();
-    });
+        checkIfTheresUserSaved();
+    }, []);
 
     useEffect(() => { 
         obtenerListaDeTarjetas();
@@ -49,7 +49,7 @@ const PaginaPrincipal = () => {
 
                             </div>
                         </div>
-                        <div className='imagenMuestra'><EjemploDispositivo/></div>
+                        {/* <div className='imagenMuestra'><EjemploDispositivo/></div> */}
                         
                     </div>
 

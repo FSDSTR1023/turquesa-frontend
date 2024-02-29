@@ -35,6 +35,9 @@ const Navbar = () => {
                     ) : (
                         <>
                             <li>
+                                <Link to='/invitacion/ejemplo'>Prueba invitacion</Link>
+                            </li>
+                            <li>
                                 <Link to='/'>Sign in</Link>
                             </li>
                             <li>
