@@ -1,0 +1,102 @@
+.screen4Body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.screen4Body h1{
+    left: 561px; 
+    width: 798px; 
+    font-family: ABeeZee; 
+    font-size: 68px; 
+    font-weight: 700; 
+    line-height: 88px; 
+    color: rgba(50,56,66,1); /* neutral-700 */
+    text-align: center;
+}
+.screen4Body h3{
+    height: 142px; 
+    font-family: Inter; /* Body */
+    font-size: 25px; 
+    font-weight: 400; 
+    line-height: 56px; 
+    color: rgba(100,153,146,1); 
+    text-align: center;
+
+}
+.contenedor-pasos-seguir{
+    display: flex;
+    margin: 20px;
+  
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    
+}
+.contenedor-pasos-seguir img{
+    width: 300px;
+    margin: 0px;
+}
+.mini-contenedor-pasos-seguir{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    margin: 45px;
+
+   
+  
+}
+.pasos-numeros{
+    display: flex;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    align-self: center;
+    background: rgba(0,189,214,1); /* primary-500 */
+    box-shadow: 0px 8px 17px rgba(23, 26, 31, 0.15), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-l */
+    margin: 10px;
+    z-index: 2;
+
+}
+.pasos-numero-texto{ 
+     width: 320px; 
+    font-family: Inter;
+    font-size: 40px; 
+    font-weight: 700; 
+    line-height: 56px; 
+    color: rgba(23,26,31,1); 
+    text-align: center;
+    z-index: 2;
+   
+  
+}
+.pasos-numero-texto-2{
+    margin: 10px;
+    width: 320px; 
+    font-family: Inter;
+    font-size: 40px; 
+    font-weight: 400; 
+    line-height: 56px; 
+    color: rgba(23,26,31,1); 
+    text-align: center;
+    
+}
+.linea-puntos{
+    width: 250%;
+    border-style: dotted;
+    border-width: 5px;
+    border-bottom: none;
+    color: rgba(64,105,229,1);
+margin-top: -50px;
+margin-bottom: 55px;
+    z-index: 1;
+    
+}
