@@ -1,0 +1,32 @@
+.VentanaInvitacionBoard {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.ConfirmarAsistenciaPopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    padding: 32px;
+    border-radius: 12px;
+    transform: translate(-50%, -50%);
+  }
+
+  .ConfirmarAsistenciaPopup p{
+    color: black;
+  }
+  
+  .ConfirmarAsistenciaOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+  }

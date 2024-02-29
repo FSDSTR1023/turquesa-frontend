@@ -20,8 +20,8 @@ const PaginaPrincipal = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        // checkIfTheresUserSaved();
-    });
+        checkIfTheresUserSaved();
+    }, []);
 
     useEffect(() => { 
         obtenerListaDeTarjetas();
