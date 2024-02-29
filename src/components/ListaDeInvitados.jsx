@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/ListaDeInvitados.css';
 
 function ListaDeInvitados({ guests, onRemoveGuest, onSendInvitations }) {

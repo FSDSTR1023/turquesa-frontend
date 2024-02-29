@@ -35,9 +35,6 @@ const Navbar = () => {
                     ) : (
                         <>
                             <li>
-                                <Link to='/invitacion/65c772f9ddc171e6d378ed36'>Prueba invitacion</Link>
-                            </li>
-                            <li>
                                 <Link to='/'>Sign in</Link>
                             </li>
                             <li>

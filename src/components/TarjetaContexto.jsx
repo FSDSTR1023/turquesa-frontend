@@ -1,6 +1,6 @@
 // src/components/tarjetaContexto.jsx
 import { createContext, useState, useContext } from 'react';
-import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta, getTarjeta } from '../api/tarjeta.api.js';
+import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta } from '../api/tarjeta.api.js';
 import {useUsuario} from '../components/UsuarioContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import TarjetaCobre from '../components/Tarjetas/TarjetaCobre';
@@ -13,7 +13,6 @@ export const TarjetaProvider = ({ children }) => {
     const [tarjetas, setTarjetas] = useState([]);
     const [tarjetaUsuario, setTarjetaUsuario] = useState (null);
     const [tarjetasUsuario, setTarjetasUsuario] = useState ([]);
-    const [tarjetaAsistente, setTarjetaAsistente] = useState (null);
 
     const obtenerListaDeTarjetas = async () => {
         try {
@@ -35,15 +34,13 @@ export const TarjetaProvider = ({ children }) => {
     }
 
     const compruebaTarjeta = (tarjeta) => {
-        if (tarjeta!=null) {
-            console.log("Tarjeta que llega al contexto: ", tarjeta);
-            if (tarjeta.nombre=="tarjetaEjemplo")
-                return(<TarjetaCobre campos={tarjeta.datos_personalizados}/>);
-            else if (tarjeta.nombre=="oro")
-                return (<TarjetaOro campos={tarjeta.datos_personalizados}/>);
-            else 
-                console.error("No se ha encontrado ninguna tarjeta con el nombre ", tarjeta.nombre);
-        }
+        console.log("Tarjeta que llega al contexto: ", tarjeta);
+        if (tarjeta.nombre=="tarjetaEjemplo")
+            return(<TarjetaCobre campos={tarjeta.datos_personalizados}/>);
+        else if (tarjeta.nombre=="oro")
+            return (<TarjetaOro campos={tarjeta.datos_personalizados}/>);
+        else 
+            console.error("No se ha encontrado ninguna tarjeta con el nombre ", tarjeta.nombre);
     }; 
 
     const compraTarjeta = async() => {
@@ -59,11 +56,6 @@ export const TarjetaProvider = ({ children }) => {
         await updateTarjeta(tarjetaUsuario);
     }
 
-    const obtenTarjetaAsistente = async (idTarjeta) => {
-        const tarjetaRecuperada = await getTarjeta(idTarjeta);
-        setTarjetaAsistente(tarjetaRecuperada);
-    }
-
 
     return (
         <TarjetaContexto.Provider value={{ 
@@ -71,10 +63,9 @@ export const TarjetaProvider = ({ children }) => {
             setTarjeta, tarjeta, 
             tarjetaUsuario, setTarjetaUsuario, 
             tarjetasUsuario,
-            tarjetaAsistente, setTarjetaAsistente,
             obtenerListaDeTarjetas, obtenerListaDeTarjetasDeUsuario,
             compruebaTarjeta, compraTarjeta,
-            actualizarTarjetaUsuario, obtenTarjetaAsistente }}>
+            actualizarTarjetaUsuario }}>
             {children}
         </TarjetaContexto.Provider>
     );
