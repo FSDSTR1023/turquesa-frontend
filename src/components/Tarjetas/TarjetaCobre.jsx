@@ -7,7 +7,7 @@ const TarjetaCobre = (props) => {
     return (
         <>
             <h1>Tarjeta Cobre</h1>
-            <h2 value={lugar}>{lugar}</h2>
+            <h2>{lugar}</h2>
         </>
     );
 }

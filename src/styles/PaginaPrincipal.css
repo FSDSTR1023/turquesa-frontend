@@ -393,7 +393,6 @@ overflow: hidden;*/
 
 .tarjetasDeMuestra {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center; 
   gap: 15px;
