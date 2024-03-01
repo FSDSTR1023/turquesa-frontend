@@ -34,7 +34,7 @@ const PaginaMisTarjetas = () => {
       <h1 className="mis-tarjetas-title">Mis Tarjetas</h1>
       <div className='imagen-mis-tarjetas-title'></div>
       </div>
-      <div className="tarjetas-container">
+      <div className="tarjetas-container-paginaMisTarjetas">
 
 
 

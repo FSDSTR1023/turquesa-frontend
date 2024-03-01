@@ -8,6 +8,7 @@ const TarjetaCobre = (props) => {
         <>
             <h1>Tarjeta Cobre</h1>
             <h2 value={lugar}>{lugar}</h2>
+            
         </>
     );
 }
