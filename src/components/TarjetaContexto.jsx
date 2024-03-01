@@ -36,10 +36,9 @@ export const TarjetaProvider = ({ children }) => {
 
     const compruebaTarjeta = (tarjeta) => {
         if (tarjeta!=null) {
-            console.log("Tarjeta que llega al contexto: ", tarjeta);
             if (tarjeta.nombre=="tarjetaEjemplo")
                 return(<TarjetaCobre campos={tarjeta.datos_personalizados}/>);
-            else if (tarjeta.nombre=="oro")
+            else if (tarjeta.nombre=="tarjetaOro")
                 return (<TarjetaOro campos={tarjeta.datos_personalizados}/>);
             else 
                 console.error("No se ha encontrado ninguna tarjeta con el nombre ", tarjeta.nombre);
@@ -61,7 +60,7 @@ export const TarjetaProvider = ({ children }) => {
 
     const obtenTarjetaAsistente = async (idTarjeta) => {
         const tarjetaRecuperada = await getTarjeta(idTarjeta);
-        setTarjetaAsistente(tarjetaRecuperada);
+        setTarjetaAsistente(tarjetaRecuperada.data);
     }
 
 

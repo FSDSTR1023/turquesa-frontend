@@ -10,8 +10,9 @@ export const AsistenteProvider = ({children}) => {
 
     const recuperarAsistente = async (asistenteId) => {
         const asistenteRecuperado = await getAsistente(asistenteId);
-        setAsistente(asistenteRecuperado);
-        await obtenTarjetaAsistente(asistente.id_tarjeta);
+        console.log("Asistente recuperado: ", asistenteRecuperado);
+        setAsistente(asistenteRecuperado.data);
+        await obtenTarjetaAsistente(asistenteRecuperado.data.id_tarjeta);
     }
 
     const actualizarAsistente = async () => {

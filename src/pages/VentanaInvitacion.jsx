@@ -7,17 +7,12 @@ const VentanaInvitacion = () => {
     const {tarjetaAsistente, compruebaTarjeta} = useTarjeta();
     const {asistente, recuperarAsistente} = useAsistente();
     const [popupState, setPopupState] = useState(false);
-    const [recuperacionDeAsistenteTerminada, setRecuperacionDeAsistenteTerminada] = useState(false);
 
     useEffect(()=>{
         const pathname = window.location.pathname.split("/");
-        console.log("pathname: ", pathname);
         const idAsistente = pathname[pathname.length-1];
-        console.log("idAsistente: ", idAsistente);
         const procesoDeRecuperarAsistente = async () => {
             await recuperarAsistente(idAsistente);
-            setRecuperacionDeAsistenteTerminada(true);
-            console.log("Termina recuperacion");
         }
         procesoDeRecuperarAsistente();
     }, []);
@@ -30,10 +25,11 @@ const VentanaInvitacion = () => {
 
     return(
         <>
-            <div className='VentanaInvitacionBoard'>
-                {recuperacionDeAsistenteTerminada === true && 
-                    compruebaTarjeta(tarjetaAsistente)}
-                <button onClick={abrirPopup}>Confirmar asistencia</button>
+            <div >
+                {compruebaTarjeta(tarjetaAsistente)}
+                <div className='colocarBotones'>
+                    <button className='buttomMorado' onClick={abrirPopup}>Confirmar asistencia</button>
+                </div>
                 {popupState === true && (
                     <PopupConfirmarAsistencia
                         asistente={asistente}
