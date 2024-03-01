@@ -1,0 +1,18 @@
+desde mi rama
+
+git pull origin mmarinucci
+git merge origin/main   
+
+s = si
+n = no
+e = esperando
+
+recupera asistente 
+enviar a la base de datos
+elementos de control nombre 
+componente icono y texto - 
+
+button de envio - activar si esta la lista de invitados 
+con al menos un invitado y disabled si no hay nadie en la lista
+
+

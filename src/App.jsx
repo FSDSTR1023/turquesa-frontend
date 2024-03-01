@@ -7,7 +7,6 @@ import GestionDeInvitados from './pages/GestionDeInvitados';
 import VentanaLogin from "./pages/VentanaLogin";
 import PaginaMisTarjetas from "./pages/PaginaMisTarjetas"
 import VentanaCompra from './pages/VentanaCompra';
-import VentanaInvitacion from './pages/VentanaInvitacion';
 
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
         <Route path="/adquirida/edit" element={<EditarTarjeta />} /> 
         <Route path="/gestion-invitados" element={<GestionDeInvitados />} /> {/* Nueva ruta */}
         <Route path="/mis-tarjetas" element={<PaginaMisTarjetas />} /> {/* Nueva ruta */}
-        <Route path="/invitacion/:id" element={<VentanaInvitacion />} /> 
+
         <Route path="/login" element={<VentanaLogin />} /> 
       </Routes>  
     </Router>
