@@ -55,6 +55,7 @@ const TarjetaOro = (props) => {
     <>
       <header className="TOSeccionPortada">
         <div className="TOTextoIntroduccion ColorTransparente">
+       
           <h2 id="fechaEnlace" className="fechaEnlace">{fecha_enlace}</h2>
           <h1 id="Pareja" className="Pareja">{nombre_pareja}</h1>
           <p id="FraseBienvenida" className="FraseBienvenida">&laquo;Todos somos mortales,<br /> hasta el primer beso y la segunda copa de vino&raquo;</p>
