@@ -8,3 +8,6 @@ export const getAsistentes = () => axios.get('/asistentes');
 // Function to create a new asistente
 export const crearAsistente = (asistente) => axios.post('/asistentes/create', asistente);
 
+export const getAsistente = (asistenteId) => axios.get('/asistentes/one', {params:{id:asistenteId}});
+
+export const updateAsistente = (asistente) => axios.put("/asistentes", null, {params:{nuevoAsistente:asistente}});
