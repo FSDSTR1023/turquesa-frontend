@@ -22,7 +22,6 @@ function App() {
         <Route path="/adquirida/edit" element={<EditarTarjeta />} /> 
         <Route path="/gestion-invitados" element={<GestionDeInvitados />} /> {/* Nueva ruta */}
         <Route path="/mis-tarjetas" element={<PaginaMisTarjetas />} /> {/* Nueva ruta */}
-
         <Route path="/login" element={<VentanaLogin />} /> 
       </Routes>  
     </Router>
