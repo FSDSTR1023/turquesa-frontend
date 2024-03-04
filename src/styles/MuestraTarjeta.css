@@ -67,13 +67,14 @@ background-color: rgba(240, 248, 255, 0.541);
   transition: opacity .35s ease;
 }
 .muestraTarjetaContenedor:hover img {
-  background-color: rgba(0, 0, 0, 0.233);
+  background-color: rgba(0, 0, 0, 0.356);
   opacity: 1;
  
 }
 
 .muestraTarjetaContenedor:hover .muestraTarjetaNombre {
   top: 90px;
+ 
 }
 
 .muestraTarjetaContenedor:hover .muestraTarjetaBotonVerTarjeta {

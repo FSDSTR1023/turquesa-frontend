@@ -1,8 +1,9 @@
 import axios from 'axios';
-// const baseURL = import.meta.env.VITE_BASE_URL;
+
+ //const baseURL = import.meta.env.VITE_BASE_URL;
 const instance = axios.create({
     // baseURL: baseURL,
-    baseURL:"https://turquesa-backend.onrender.com",
+    baseURL:import.meta.env.VITE_INVITO_BACKEND_URL,
     withCredentials:true,
 });
 

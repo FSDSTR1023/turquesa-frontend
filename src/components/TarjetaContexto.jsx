@@ -37,7 +37,9 @@ export const TarjetaProvider = ({ children }) => {
        if (tarjeta!=null) {
             if (tarjeta.nombre=="tarjetaEjemplo")
                 return(<TarjetaCobre campos={tarjeta.datos_personalizados}/>);
+
             else if (tarjeta.nombre=="tarjetaOro")
+
                 return (<TarjetaOro campos={tarjeta.datos_personalizados}/>);
             else 
                 console.error("No se ha encontrado ninguna tarjeta con el nombre ", tarjeta.nombre);

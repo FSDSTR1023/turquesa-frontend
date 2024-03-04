@@ -64,13 +64,13 @@ function SignUpForm() {
           </a>
         </div>
         <span>o utiliza tu correo electrónico para registrarte</span>
-        <input
+    {/*   <input
           type="text"
           name="name"
           value={state.name}
           onChange={handleChange}
           placeholder="Name"
-        />
+        />*/}
         <input
           type="email"
           name="email"
