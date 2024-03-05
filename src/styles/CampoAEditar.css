@@ -1,0 +1,46 @@
+.datosFormulario{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.textoLabelFormulario{
+  font-family: Inter; 
+  font-size: 12px; 
+  font-weight: 700; 
+  line-height: 20px; 
+  text-transform: uppercase;
+  margin-left: 4px;
+
+}
+
+.textoInputFormulario{
+    padding-left: 12px; 
+    padding-right: 12px; 
+    font-family: Inter; 
+    font-size: 14px; 
+    font-weight: 400; 
+    line-height: 22px; 
+    background: rgba(243,244,246,1); /* neutral-200 */
+    border-radius: 4px; /* border-m */
+    border-width: 0px; 
+    outline: none; 
+    width: 349px; 
+    height: 36px; 
+}
+.textoInputFormulario:hover{
+
+  background: rgb(219, 224, 233);
+  border: 1.5px solid rgb(142, 93, 255);
+  box-shadow: 0px 0px 10px rgba(149, 110, 255, 0.644);
+
+
+}
+.textoInputFormulario:focus{
+    color: rgba(188,193,202,1); /* neutral-400 */
+    background: rgba(255,255,255,1); /* white */
+    border: 1px black;
+}
+.textoInputFormulario:required{
+    border: 1px solid black;
+}

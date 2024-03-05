@@ -1,5 +1,5 @@
 // src/pages/GestionDeInvitados.jsx
-import React, { useState } from "react";
+import  { useState } from "react";
 
 // Components
 import Navbar from "../components/Navbar.jsx";

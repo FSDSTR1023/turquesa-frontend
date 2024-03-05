@@ -1,10 +1,9 @@
 // src/components/tarjetaContexto.jsx
 import { createContext, useState, useContext } from 'react';
-import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta } from '../api/tarjeta.api.js';
 import {useUsuario} from '../components/UsuarioContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import TarjetaCobre from '../components/Tarjetas/TarjetaCobre';
-
+import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta, getTarjeta } from '../api/tarjeta.api.js';
 const TarjetaContexto = createContext();
 
 export const TarjetaProvider = ({ children }) => {
@@ -13,6 +12,7 @@ export const TarjetaProvider = ({ children }) => {
     const [tarjetas, setTarjetas] = useState([]);
     const [tarjetaUsuario, setTarjetaUsuario] = useState (null);
     const [tarjetasUsuario, setTarjetasUsuario] = useState ([]);
+    const [tarjetaAsistente, setTarjetaAsistente] = useState (null);
 
     const obtenerListaDeTarjetas = async () => {
         try {
@@ -75,7 +75,7 @@ export const TarjetaProvider = ({ children }) => {
             tarjetasUsuario,
             obtenerListaDeTarjetas, obtenerListaDeTarjetasDeUsuario,
             compruebaTarjeta, compraTarjeta,
-            actualizarTarjetaUsuario }}>
+            actualizarTarjetaUsuario, obtenTarjetaAsistente }}>
             {children}
         </TarjetaContexto.Provider>
     );
