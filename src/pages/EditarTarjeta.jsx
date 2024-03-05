@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CampoAEditar from "../components/CampoAEditar.jsx";
+import CampoImagenAEditar from "../components/CampoImagenAEditar.jsx";
 import { useTarjeta } from '../components/TarjetaContexto';
 import {Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -48,9 +49,13 @@ const EditarTarjeta = () => {
                     })
                     
                 }
-               
-               
-                
+                {
+                    Object.entries (tarjetaUsuario.imagenes).map((value, index)=> {
+                        return(<CampoImagenAEditar key={index} campo={value} index={index} campos={campos}/>)
+                    })
+                    
+                }
+
                 
                 {/* {campos.map((campo, index)=>{if(index<campos.length-1){return(<CampoAEditar key={index} campo={campo} index={index} />)}})} */}
                 </div>
