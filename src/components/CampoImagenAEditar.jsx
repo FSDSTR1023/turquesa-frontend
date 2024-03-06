@@ -1,23 +1,33 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import '../styles/CampoAEditar.css';
 
 
 const CampoAEditar = (props) => {
     console.log("Props a editar: ", props);
-    var campo = props.campo;
+    const imagen = props.campo;
     const index = props.index;
-    const campos = props.campos;
-    const valorActual = useRef();
-    console.log(campo);
+    const imagenes = props.imagenes;
+    const [image, setImage] = useState(imagen[1]);
+    console.log("imagen del edit", imagen);
 
-    const updateValue = () => {
-        campos[index].valor=valorActual.current.value;
+    const updateValue = (e) => {
+        const files = e.target.files;
+        if (files) {
+            var reader = new FileReader();
+            reader.onload = function (ev) {
+              setImage(ev.target.result);
+              imagenes[index].nombre=imagen[0];
+              imagenes[index].valor=e;
+            };
+            reader.readAsDataURL(files[0]);
+        }
     }
 
     return (
         <div className='datosFormulario'>
-            <label className='textoLabelFormulario' htmlFor={"campoAEditar-"+campo[0]+index}>{campo[0]}</label>
-            <input className="textoInputFormulario" ref={valorActual} onChange={updateValue} id={"campoAEditar-"+campo[0]+index} type="text" placeholder={campo[1]}></input>
+            <label className='textoLabelFormulario' htmlFor={"imagenAEditar-"+imagen[0]+index}>{imagen[0]}</label>
+            <input className="textoInputFormulario" type="file" id={"imagenAEditar-"+imagen[0]+index} accept="image/png, image/gif, image/jpeg" onChange={updateValue} />
+            {image && <img src={image} alt="Uploaded" style={{ width: '200px' }} />}
         </div>
     );
 }
