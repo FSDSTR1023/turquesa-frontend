@@ -1,11 +1,12 @@
 // src/pages/GestionDeInvitados.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Components
 import Navbar from "../components/Navbar.jsx";
 import FormularioAniadirInvitado from "../components/FormularioAniadirInvitado";
 import ListaDeInvitados from "../components/ListaDeInvitados";
 import ListaDeInvitadosEnviados from "../components/ListaDeInvitadosEnviados";
+import {Link} from 'react-router-dom';
 
 // Context and API utilities
 import { useTarjeta } from '../components/TarjetaContexto';
@@ -92,7 +93,11 @@ function GestionDeInvitados() {
                 sentInvites={sentInvites}
                 onUpdateStatus={() => {}} // Define or update this function based on your needs
             />
+             <div className="container-buttom-gestiondeinvitados">
+        <button className="buttomMorado"><Link to="/adquirida">Volver</Link></button>
         </div>
+        </div>
+       
         </>
     );
 }

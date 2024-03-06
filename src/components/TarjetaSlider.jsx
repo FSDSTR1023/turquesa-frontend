@@ -1,4 +1,4 @@
-import '../styles/TarjetaSlider.css';
+import '../styles/tarjetaSlider.css';
 
 
 const TarjetaSlider = (prop) => {

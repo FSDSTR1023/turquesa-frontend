@@ -21,5 +21,12 @@
   font-size: 1.5rem; /* Larger font size for headers */
 }
 
+.container-buttom-gestiondeinvitados{
+  display: flex;
+  justify-content: center;
+}
 
-
+.container-buttom-gestiondeinvitados a{
+  text-decoration: none;
+  color:#fff;
+}

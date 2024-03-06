@@ -10,10 +10,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 
-const TarjetaOro = () => {
+const TarjetaOro = (props) => {
   const [tarjeta, setTarjeta] = useState({});
+  const campos = props.campos;
+  const fecha_enlace = useState (campos.fecha_enlace);
+  const nombre_pareja =useState (campos.nombre_pareja);
+  const dia_ceremonia = useState (campos.fecha_enlace.split(" ")[0]);
+  const hora_ceremonia = useState (campos.hora_ceremonia);
+  const lugar_ceremonia = useState (campos.lugar_ceremonia);
+  const direccion_ceremonia = useState (campos.direccion_ceremonia);
+  const fecha_celebracion = useState (campos.fecha_celebracion);
+  const hora_celebracion = useState (campos.hora_celebracion);
+  const lugar_celebracion = useState (campos.lugar_celebracion);
+  const direccion_celebracion = useState (campos.direccion_celebracion);
+  const hastag_instagram = useState (campos.hastag_instagram);
+
+
+
 
   useEffect(() => {
+    //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("es", "pe"));
     const countDownDate = new Date('april 1, 2024 00:00:00').getTime();
     const x = setInterval(() => {
       const now = new Date().getTime();
@@ -37,10 +53,12 @@ const TarjetaOro = () => {
 
   return (
     <>
-      <header className="TOSeccionPortada">
+      <header className="TOSeccionPortada" style={{ backgroundImage: "url(https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg)" }}>
+
         <div className="TOTextoIntroduccion ColorTransparente">
-          <h2 id="fechaEnlace" className="fechaEnlace">1.4.2024</h2>
-          <h1 id="Pareja" className="Pareja">Manuel & Laura</h1>
+       
+          <h2 id="fechaEnlace" className="fechaEnlace">{fecha_enlace}</h2>
+          <h1 id="Pareja" className="Pareja">{nombre_pareja}</h1>
           <p id="FraseBienvenida" className="FraseBienvenida">&laquo;Todos somos mortales,<br /> hasta el primer beso y la segunda copa de vino&raquo;</p>
         </div>
       </header>
@@ -65,26 +83,26 @@ const TarjetaOro = () => {
           <div className="ceremonia">
             <div><h2>Ceremonia</h2><hr className="linea" />
               <h3>Día</h3>
-              <p id="fechaEnlaceSemanaCeremonia">Sábado 1 de Abril <span id="horaCeremonia">17 h</span></p>
+              <p id="fechaEnlaceSemanaCeremonia">{dia_ceremonia} <span id="horaCeremonia">{hora_ceremonia}</span></p>
               <button id="agendarCeremonia" className="TOButton">AGENDAR</button>
-              <h3>Lugar</h3>
-              <p id="lugarCeremonia">Parroquia Nuestra señora de Lujan</p>
+              <h3>lugar</h3>
+              <p id="lugarCeremonia">{lugar_ceremonia}</p>
               <button id="confirmarAsistenciaCeremonia" className="TOButton">Confirmar Asistencia</button>
               <h3>Dirección</h3>
-              <p id="DireccionCeremonia">Av. Pergamino 203- Barcelona</p>
+              <p id="DireccionCeremonia">{direccion_ceremonia}</p>
               <button className="TOButton">¿Cómo llegar?</button>
             </div>
           </div>
           <div className="celebracion">
             <div><h2>Celebracion</h2><hr className="linea" />
               <h3>Día</h3>
-              <p id="fechaEnlaceSemanaCelebracion">Sábado 1 de Abril <span id="horaCelebracion">20 h</span></p>
+              <p id="fechaEnlaceSemanaCelebracion">{fecha_celebracion}<span id="horaCelebracion">{hora_celebracion}</span></p>
               <button id="agendarCelebracion"className="TOButton">AGENDAR</button>
               <h3>Lugar</h3>
-              <p id="lugarCelebracion">Salon de mega fiestas</p>
+              <p id="lugarCelebracion">{lugar_celebracion}</p>
               <button id="confirmarAsistenciaCelebracion" className="TOButton">Confirmar Asistencia</button>
               <h3>Dirección</h3>
-              <p id="DireccionCelebracion">Av. Los Reartes- Barcelona</p>
+              <p id="DireccionCelebracion">{direccion_celebracion}</p>
               <button className="TOButton">¿Cómo llegar?</button>
             </div>
           </div>
@@ -214,14 +232,14 @@ const TarjetaOro = () => {
         <div className="TOTextoIntroduccion ColorTransparente">
           <h1 className="Pareja" style={{ fontSize: '55px' }}>Compartimos este día junto a ti</h1>
           <p className="FraseBienvenida">Comparte tus fotos y vídeos de este hermoso día</p>
-          <p id="NombreParejaInstagram" className="FraseBienvenida"> #manuelylaura</p>
+          <p id="NombreParejaInstagram" className="FraseBienvenida">  {hastag_instagram} </p>
           <img id="fotografiaPareja7" style={{ width: '100px', marginTop: '40px', marginBottom: '20px', position: 'relative', height: 'auto'}} src="https://github.com/FSDSTR1023/turquesa-imagenes/blob/master/img/instagram.png?raw=true" alt="instagram" />
-          <button id="enlaceInstagram" className="TOButton">Ver en instagram</button>
+          <button id="enlaceInstagram" className="TOButton"> Ver en instagram</button>
         </div>
       </section>
       <footer>
         <div className="footer-boda">
-          <div style={{ opacity: '2' }}><h1>Manuel & Laura</h1></div>
+          <div style={{ opacity: '2' }}><h1>{nombre_pareja}</h1></div>
           <div>
             <a href="#confirmarAsistenciaCeremonia"><p>CONFIRMAR ASISTENCIA</p></a> 
             <a href="#confirmarAsistenciaCelebracion"><p>CONFIRMAR ASISTENCIA A LA CELEBRACIÓN</p></a>
