@@ -1,6 +1,5 @@
 // api/tarjeta.api.js
 
-// api/tarjeta.api.js
 
 import axios from './axios.js';
 
@@ -15,7 +14,6 @@ export const getTarjeta = (id) => axios.get('/tarjeta/' + id);
 
 // Fetch tarjetas for a specific user by their userID
 export const getTarjetasUsuario = (userId) => axios.post('/tarjeta/usuario/all', {user:userId});
-
 
 export const generarTarjetaParaUsuario = (tarjeta, usuarioId) => axios.post(`/tarjeta/usuario/crear`, {tarjeta:tarjeta, usuario:usuarioId});
 
