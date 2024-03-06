@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-import React from 'react';
 import TarjetaSlider from './TarjetaSlider';
 import { caracteristicas } from './CaracterísticasDeTarjetas';
 import { Navigation, Pagination, A11y } from 'swiper/modules';

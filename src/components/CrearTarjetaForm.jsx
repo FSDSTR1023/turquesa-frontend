@@ -1,5 +1,5 @@
 // Adaptación de CrearTarjetaForm.jsx para la personalización
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // Para obtener el ID de la tarjeta desde la URL
 import { crearTarjeta, getTarjeta } from '../api/tarjeta.api'; // Asegúrate de que estas funciones estén implementadas
 
