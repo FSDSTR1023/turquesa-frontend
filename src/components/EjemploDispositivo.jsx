@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/EjemploDispositivo.css';
 import '../styles/PaginaPrincipal.css';
 import TarjetaOro1 from '../components/TarjetaOro1.jsx';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 
@@ -11,27 +11,36 @@ const ImageUpload = () => {
 
  const uploadImage = async (e) => {
    console.log("aqui esta", e)
- const files = e.target.files;
- const data = new FormData();
- data.append('file', files[0]);
- data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_NAME);
- data.append('upload_preset', import.meta.env.VITE_CLOUDINARY_UNSIGNED_PRESET); 
-console.log("aqui esta data", data) 
-try {
-    console.log('Data being sent to Cloudinary:', data);
- const uploadRes = await axios({
-   method:'post',
-   url:import.meta.env.VITE_CLOUDINARY_URL,
-  
-  
-   data: data
-  });
- console.log('Response from Cloudinary:', uploadRes);
- const { url } = uploadRes.data;
- setImage(url);
- } catch (err) {
- console.error("Error uploading the image", err);
- }
+  const files = e.target.files;
+  const data = new FormData();
+  data.append('file', files[0]);
+  data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_NAME);
+  data.append('upload_preset', import.meta.env.VITE_CLOUDINARY_UNSIGNED_PRESET); 
+  console.log("aqui esta data", data) 
+  try {
+      console.log('Data being sent to Cloudinary:', data);
+      const uploadRes = await axios({
+      method:'post',
+      url:import.meta.env.VITE_CLOUDINARY_URL,
+    
+    
+      data: data
+    });
+  console.log('Response from Cloudinary:', uploadRes);
+  const { url } = uploadRes.data;
+  setImage(url);
+  } catch (err) {
+    console.error("Error uploading the image", err);
+  }
+
+      if (files) {
+        var reader = new FileReader();
+        reader.onload = function (ev) {
+          setImage(ev.target.result);
+        };
+        reader.readAsDataURL(files[0]);
+    }
+
  };
  return (
  <div>

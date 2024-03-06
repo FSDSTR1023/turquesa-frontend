@@ -10,7 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   /* background-image: url(https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg);*/
+
+    /*background-image: url(https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg);*/
+
     background-repeat: no-repeat;
     background-size: cover; 
     filter: brightness(120%);
