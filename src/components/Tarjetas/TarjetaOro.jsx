@@ -53,7 +53,7 @@ const TarjetaOro = (props) => {
 
   return (
     <>
-      <header className="TOSeccionPortada">
+    <header className="TOSeccionPortada" style={{ backgroundImage: "url(https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg)" }}>
         <div className="TOTextoIntroduccion ColorTransparente">
        
           <h2 id="fechaEnlace" className="fechaEnlace">{fecha_enlace}</h2>
