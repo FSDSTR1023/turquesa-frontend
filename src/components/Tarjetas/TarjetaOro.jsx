@@ -11,7 +11,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 const TarjetaOro = (props) => {
-  const [tarjeta, setTarjeta] = useState({});
   const campos = props.campos;
   const imagenes = props.imagenes;
   const fecha_enlace = useState (campos.fecha_enlace);
