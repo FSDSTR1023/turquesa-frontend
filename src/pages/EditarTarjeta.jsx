@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar.jsx';
 import "../styles/EditarTarjetaFormulario.css";
-import ImageUpload from "../components/ImageUpload.jsx";
 
 
 const EditarTarjeta = () => {
@@ -76,8 +75,6 @@ const EditarTarjeta = () => {
                             return(<CampoImagenAEditar key={index} campo={value} index={index} imagenes={imagenes}/>)
                         })
                 }
-               
-               <ImageUpload/>
                 
                 
                 {/* {campos.map((campo, index)=>{if(index<campos.length-1){return(<CampoAEditar key={index} campo={campo} index={index} />)}})} */}
