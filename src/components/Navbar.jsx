@@ -33,17 +33,11 @@ const Navbar = () => {
                                 <Link to='/mis-tarjetas'>Mis tarjetas</Link>
                             </li>
                             <li>
-                                    <Link to='/gestion-invitados'>Gestión de Invitados</Link> {/* Nuevo enlace */}
-                            </li>
-                            <li>
                                 <a onClick={handleLogout}>Logout</a>
                             </li>
                         </>
                     ) : (
                         <>
-                            <li>
-                                <Link to='/invitacion/65c772f9ddc171e6d378ed36'>Prueba invitacion</Link>
-                            </li>
                             <li>
                                 <Link to='/login'>Log in</Link>
                             </li>

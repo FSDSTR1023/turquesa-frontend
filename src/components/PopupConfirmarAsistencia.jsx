@@ -22,8 +22,13 @@ const PopupConfirmarAsistencia = (props) => {
         <>
             <div className="ConfirmarAsistenciaOverlay" onClick={funcionCerrar} />
             <div className="ConfirmarAsistenciaPopup" onClick={funcionCerrar}>
-                <button className="buttomMorado" onClick={handleConfirmar}>Confirmo</button>
-                <button className="buttomMorado" onClick={handleCancelar}>Cancelo</button>
+                <div>
+                    <p>{asistente.nombre}, ¿aceptas o cancelas la invitación?</p>
+                </div>
+                <div className="ConfirmarAsistenciaPopupBotones" >
+                    <button className="buttomMorado" onClick={handleConfirmar}>Confirmo</button>
+                    <button className="buttomMorado" onClick={handleCancelar}>Cancelo</button>
+                </div>
             </div>
         </>
     );

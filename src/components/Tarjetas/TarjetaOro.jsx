@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../../styles/tarjetaOro.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,8 +11,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 const TarjetaOro = (props) => {
-  const [tarjeta, setTarjeta] = useState({});
   const campos = props.campos;
+  const imagenes = props.imagenes;
   const fecha_enlace = useState (campos.fecha_enlace);
   const nombre_pareja =useState (campos.nombre_pareja);
   const dia_ceremonia = useState (campos.fecha_enlace.split(" ")[0]);
@@ -24,6 +24,7 @@ const TarjetaOro = (props) => {
   const lugar_celebracion = useState (campos.lugar_celebracion);
   const direccion_celebracion = useState (campos.direccion_celebracion);
   const hastag_instagram = useState (campos.hastag_instagram);
+  const imagen_slider_1 = useState (imagenes.imagen_slider_1);
 
 
 
@@ -53,7 +54,8 @@ const TarjetaOro = (props) => {
 
   return (
     <>
-      <header className="TOSeccionPortada">
+      <header className="TOSeccionPortada" style={{ backgroundImage: "url(https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_1280.jpg)" }}>
+
         <div className="TOTextoIntroduccion ColorTransparente">
        
           <h2 id="fechaEnlace" className="fechaEnlace">{fecha_enlace}</h2>
@@ -139,7 +141,7 @@ const TarjetaOro = (props) => {
       onSlideChange={() => console.log('slide change')}
     >
       {/*<SwiperSlide><img id="fotografiaPareja1" src={tarjeta.fotografiaPareja1}/></SwiperSlide>*/}
-      <SwiperSlide><img id="fotografiaPareja2" src="https://cdn.pixabay.com/photo/2015/03/30/12/35/sunset-698501_1280.jpg"/></SwiperSlide>
+      <SwiperSlide><img id="fotografiaPareja2" src={imagen_slider_1[0]}/></SwiperSlide>
       <SwiperSlide><img id="fotografiaPareja3" src="https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_1280.jpg"/></SwiperSlide>
       <SwiperSlide><img id="fotografiaPareja4" src="https://cdn.pixabay.com/photo/2016/11/22/19/05/wedding-1850074_1280.jpg"/></SwiperSlide>
       <SwiperSlide><img id="fotografiaPareja5" src="https://cdn.pixabay.com/photo/2016/10/16/14/21/wedding-1745240_1280.jpg"/></SwiperSlide>

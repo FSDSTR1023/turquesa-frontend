@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import CampoAEditar from "../components/CampoAEditar.jsx";
+import CampoImagenAEditar from "../components/CampoImagenAEditar.jsx";
 import { useTarjeta } from '../components/TarjetaContexto';
 import {Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar.jsx';
 import "../styles/EditarTarjetaFormulario.css";
-import ImageUpload from "../components/ImageUpload.jsx";
+
+
 const EditarTarjeta = () => {
     const {tarjetaUsuario} = useTarjeta();
     const {actualizarTarjetaUsuario} = useTarjeta();
     const navigate = useNavigate();
     const [campos, setCampos] = useState([]);
+    const [imagenes, setImagenes] = useState([]);
+
     useEffect(()=> {
+        // Datos_personalizados
         const datos = tarjetaUsuario.datos_personalizados;
         const camposTemp = campos;
         console.log("Datos personalizados:", datos);
@@ -23,10 +28,29 @@ const EditarTarjeta = () => {
         setCampos(camposTemp);
         console.log("Campos final: ", campos);
         campos.map((campo, index)=>{console.log('Campo '+index+' del map: ', campo)});
+
+
+        // Imágenes
+        if(tarjetaUsuario.imagenes!=undefined && tarjetaUsuario.imagenes!=null) {
+            const datosImagenes = tarjetaUsuario.imagenes;
+            const imagenesTemp = imagenes;
+            console.log("Imagenes personalizadas:", datosImagenes);
+            iterator = 0;
+            for (const [key, value] of Object.entries(datosImagenes)) {
+                imagenesTemp[iterator]={nombre:key, valor:value};
+                iterator++;
+            }
+            setImagenes(imagenesTemp);
+            console.log("Imagenes final: ", imagenes);
+            imagenes.map((imagen, index)=>{console.log('Imagen '+index+' del map: ', imagen)});
+        }
     }, []);
     console.log("Campos final 2: ", campos);
+
+    
+
     const saveChanges = async () => {
-        await actualizarTarjetaUsuario(campos);
+        await actualizarTarjetaUsuario(campos, imagenes);
         navigate("/adquirida");
     }
     return (
@@ -42,7 +66,14 @@ const EditarTarjeta = () => {
                         return(<CampoAEditar key={index} campo={value} index={index} campos={campos}/>)
                     })
                 }
-               <ImageUpload/>
+                {
+                    tarjetaUsuario.imagenes!=undefined && 
+                        Object.entries (tarjetaUsuario.imagenes).map((value, index)=> {
+                            return(<CampoImagenAEditar key={index} campo={value} index={index} imagenes={imagenes}/>)
+                        })
+                }
+                
+                
                 {/* {campos.map((campo, index)=>{if(index<campos.length-1){return(<CampoAEditar key={index} campo={campo} index={index} />)}})} */}
                 </div>
                 <div className="colocarBotones">

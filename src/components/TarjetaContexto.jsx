@@ -4,6 +4,8 @@ import {useUsuario} from '../components/UsuarioContexto.jsx';
 import TarjetaOro from '../components/Tarjetas/TarjetaOro';
 import TarjetaCobre from '../components/Tarjetas/TarjetaCobre';
 import { getTarjetas, getTarjetasUsuario, generarTarjetaParaUsuario, updateTarjeta, getTarjeta } from '../api/tarjeta.api.js';
+import axios from 'axios';
+
 const TarjetaContexto = createContext();
 
 export const TarjetaProvider = ({ children }) => {
@@ -36,11 +38,11 @@ export const TarjetaProvider = ({ children }) => {
     const compruebaTarjeta = (tarjeta) => {
        if (tarjeta!=null) {
             if (tarjeta.nombre=="tarjetaEjemplo")
-                return(<TarjetaCobre campos={tarjeta.datos_personalizados}/>);
+                return(<TarjetaCobre campos={tarjeta.datos_personalizados} imagenes={tarjeta.imagenes} />);
 
             else if (tarjeta.nombre=="tarjetaOro")
 
-                return (<TarjetaOro campos={tarjeta.datos_personalizados}/>);
+                return (<TarjetaOro campos={tarjeta.datos_personalizados} imagenes={tarjeta.imagenes} />);
             else 
                 console.error("No se ha encontrado ninguna tarjeta con el nombre ", tarjeta.nombre);
         }
@@ -52,13 +54,47 @@ export const TarjetaProvider = ({ children }) => {
         setTarjetaUsuario(response.data);
     }
 
-    const actualizarTarjetaUsuario = async (campos) => {
+    const actualizarTarjetaUsuario = async (campos, imagenes) => {
         campos.map((campo) => {
             tarjetaUsuario.datos_personalizados[campo.nombre]=campo.valor;
         });
+        if (imagenes!=undefined && imagenes!=null) {
+            console.log("imagenes: ", imagenes);
+            imagenes.map(async (imagen) => {
+                if (imagen!=undefined && imagen!=null) {
+                    const url = await uploadImage(imagen.valor);
+                    tarjetaUsuario.imagenes[imagen.nombre]=url;
+                }
+            });
+        }
         console.log("Datos a actualizar: ", tarjetaUsuario);
         await updateTarjeta(tarjetaUsuario);
     }
+    
+    const uploadImage = async (e) => {
+        console.log("aqui esta", e)
+        const files = e.target.files;
+        const data = new FormData();
+        data.append('file', files[0]);
+        data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_NAME);
+        data.append('upload_preset', import.meta.env.VITE_CLOUDINARY_UNSIGNED_PRESET); 
+        console.log("aqui esta data", data) 
+        try {
+            console.log('Data being sent to Cloudinary:', data);
+            const uploadRes = await axios({
+                method:'post',
+                url:import.meta.env.VITE_CLOUDINARY_URL,
+                
+                
+                data: data
+            });
+            console.log('Response from Cloudinary:', uploadRes);
+            const { url } = uploadRes.data;
+            return url;
+        } catch (err) {
+            console.error("Error uploading the image", err);
+        }
+    };
 
 
     const obtenTarjetaAsistente = async (idTarjeta) => {

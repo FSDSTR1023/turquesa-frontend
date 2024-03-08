@@ -46,7 +46,8 @@
   color: white;
   z-index: 1;
   transition: top .5s ease;
-
+  text-shadow: 2px 0 #b00ad1, -2px 0 #b00ad1, 0 2px #b00ad1, 0 -2px #b00ad1,
+             1px 1px #b00ad1, -1px -1px #b00ad1, 1px -1px #b00ad1, -1px 1px #b00ad1;
 }
 .muestraTarjetaBotonVerTarjeta {
   position: absolute;
@@ -65,6 +66,9 @@ background-color: rgba(240, 248, 255, 0.541);
   z-index: 1;
   opacity: 0;
   transition: opacity .35s ease;
+  transition: top .5s ease;
+  text-shadow: 2px 0 #b00ad1, -2px 0 #b00ad1, 0 2px #b00ad1, 0 -2px #b00ad1,
+             1px 1px #b00ad1, -1px -1px #b00ad1, 1px -1px #b00ad1, -1px 1px #b00ad1;
 }
 .muestraTarjetaContenedor:hover img {
   background-color: rgba(0, 0, 0, 0.356);
